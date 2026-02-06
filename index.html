@@ -1,6 +1,62 @@
-   <div class="product-card">
-                <img src="https://m.media-amazon.com/images/I/51S4CIny4YL._AC_SL1500_.jpg" alt="منظف">
-                <h3>منظف الأذن الذكي بكاميرا HD</h3>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickora | المتجر الذكي</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Changa:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <div class="sidebar-title">الأقسام</div>
+        <a href="#">🏠 المنزل والمطبخ</a>
+        <a href="#">📱 إلكترونيات ذكية</a>
+        <a href="#">✨ منتجات التجميل</a>
+        <a href="#">🎧 سماعات وألعاب</a>
+        <a href="#">⌚ ساعات ذكية</a>
+        <a href="#">🏋️ أدوات رياضية</a>
+        <a href="#">🧸 ألعاب أطفال</a>
+        <a href="#">🚗 إكسسوارات سيارات</a>
+        <a href="#">👗 موضة وأزياء</a>
+        <a href="#">💡 ديكور وإضاءة</a>
+    </div>
+
+    <nav class="navbar">
+        <button class="openbtn" onclick="openNav()">☰</button>
+        <div class="search-container">
+            <input type="text" placeholder="بحث عن منتج...">
+        </div>
+        <div class="logo">P<span>i</span></div>
+    </nav>
+
+    <div class="main-content">
+        <header class="hero">
+            <h1>Pickora</h1>
+            <p>أفضل منتجات التريند المختارة بعناية</p>
+        </header>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/51idm7yI9LL._AC_SL1000_.jpg" alt="كاميرا">
+                <h3>كاميرا المراقبة الذكية</h3>
+                <a href="#" class="buy-btn">عرض السعر</a>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61N99S-k4rL._AC_SL1500_.jpg" alt="خلاط">
+                <h3>خلاط العصائر المحمول</h3>
+                <a href="#" class="buy-btn">عرض السعر</a>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61mI-8RkLSL._AC_SL1500_.jpg" alt="مكنسة">
+                <h3>المكنسة اللاسلكية الصغيرة</h3>
+                <a href="#" class="buy-btn">عرض السعر</a>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61mNnO5A3ML._AC_SL1200_.jpg" alt="بروجكتر">
+                <h3>بروجكتر رائد الفضاء</h3>
                 <a href="#" class="buy-btn">عرض السعر</a>
             </div>
         </div>
@@ -11,10 +67,4 @@
         function closeNav() { document.getElementById("mySidebar").style.width = "0"; }
     </script>
 </body>
-</html
-         
-
-
-
-
-
+</html>
