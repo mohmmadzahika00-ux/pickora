@@ -1,77 +1,3 @@
-body {
-    font-family: 'Almarai', sans-serif;
-    margin: 0;
-    background-color: #f9f9f9;
-    direction: rtl;
-}
-
-/* الشريط العلوي */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.search-container { flex-grow: 1; text-align: center; margin: 0 15px; }
-.search-container input {
-    width: 80%;
-    padding: 8px 15px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
-    outline: none;
-}
-
-.logo { font-family: 'Changa'; font-size: 24px; font-weight: bold; }
-.logo span { color: #fc5c65; }
-
-/* القائمة الجانبية */
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    right: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    text-align: right;
-}
-
-.sidebar a {
-    padding: 15px 25px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidebar a:hover { color: #f1f1f1; }
-.sidebar .closebtn { position: absolute; top: 0; left: 25px; font-size: 36px; }
-.sidebar-title { color: #fff; padding: 0 25px 20px; font-weight: bold; font-size: 22px; border-bottom: 1px solid #333; }
-
-.openbtn { font-size: 20px; cursor: pointer; background: none; border: none; }
-
-/* المحتوى والشبكة */
-.main-content { padding: 20px; max-width: 800px; margin: 0 auto; }
-.hero { text-align: center; padding: 20px 0; }
-
-.products-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.product-card {
-    background: #fff;
     border-radius: 12px;
     padding: 10px;
     text-align: center;
@@ -89,6 +15,4 @@ body {
     padding: 8px;
     border-radius: 5px;
     font-size: 13px;
-    font-weight: bold;
-}
-
+    font-weight: bold
