@@ -23,7 +23,6 @@
             gap: 10px;
         }
 
-        /* تنسيق زر العودة للرئيسية داخل القائمة */
         .back-home {
             background: #222;
             margin: 5px 15px 15px 15px;
@@ -91,7 +90,7 @@
         </div>
     </div>
 
-    <a href="https://www.tiktok.com/@lukiane16?_r=1&_t=ZS-93huMDuVb0O" class="tiktok-float" target="_blank">
+    <a href="https://www.tiktok.com/@pickora2026?_r=1&_t=ZS-93hwutIwYL7" class="tiktok-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-tiktok"></i>
     </a>
 
@@ -110,39 +109,26 @@
     </div>
 
     <script>
-        // قاعدة بيانات الصور (زدناها لـ 24 عشان تملأ الصفحة)
         const myDatabase = [
             { img: "https://via.placeholder.com/400x500/00cec9/fff?text=Sport+1", link: "#" },
             { img: "https://via.placeholder.com/400x500/00cec9/fff?text=Sport+2", link: "#" },
-            { img: "https://via.placeholder.com/400x500/00cec9/fff?text=Sport+3", link: "#" },
             { img: "https://via.placeholder.com/400x500/ff79c6/fff?text=Beauty+1", link: "#" },
             { img: "https://via.placeholder.com/400x500/ff79c6/fff?text=Beauty+2", link: "#" },
-            { img: "https://via.placeholder.com/400x500/ff79c6/fff?text=Beauty+3", link: "#" },
             { img: "https://via.placeholder.com/400x500/f1c40f/fff?text=Home+1", link: "#" },
             { img: "https://via.placeholder.com/400x500/f1c40f/fff?text=Home+2", link: "#" },
-            { img: "https://via.placeholder.com/400x500/f1c40f/fff?text=Home+3", link: "#" },
             { img: "https://via.placeholder.com/400x500/8e44ad/fff?text=Gaming+1", link: "#" },
             { img: "https://via.placeholder.com/400x500/8e44ad/fff?text=Gaming+2", link: "#" },
-            { img: "https://via.placeholder.com/400x500/8e44ad/fff?text=Gaming+3", link: "#" },
             { img: "https://via.placeholder.com/400x500/e67e22/fff?text=Kids+1", link: "#" },
             { img: "https://via.placeholder.com/400x500/e67e22/fff?text=Kids+2", link: "#" },
-            { img: "https://via.placeholder.com/400x500/e67e22/fff?text=Kids+3", link: "#" },
-            { img: "https://via.placeholder.com/400x500/333/fff?text=Item+16", link: "#" },
-            { img: "https://via.placeholder.com/400x500/333/fff?text=Item+17", link: "#" },
-            { img: "https://via.placeholder.com/400x500/333/fff?text=Item+18", link: "#" },
-            { img: "https://via.placeholder.com/400x500/222/fff?text=Item+19", link: "#" },
-            { img: "https://via.placeholder.com/400x500/222/fff?text=Item+20", link: "#" },
-            { img: "https://via.placeholder.com/400x500/222/fff?text=Item+21", link: "#" },
-            { img: "https://via.placeholder.com/400x500/444/fff?text=Item+22", link: "#" },
-            { img: "https://via.placeholder.com/400x500/444/fff?text=Item+23", link: "#" },
-            { img: "https://via.placeholder.com/400x500/444/fff?text=Item+24", link: "#" }
+            { img: "https://via.placeholder.com/400x500/333/fff?text=Item+11", link: "#" },
+            { img: "https://via.placeholder.com/400x500/333/fff?text=Item+12", link: "#" }
         ];
 
         function loadRandomStore() {
             const grid = document.getElementById('dynamicGrid');
             grid.innerHTML = ''; 
             const shuffled = myDatabase.sort(() => 0.5 - Math.random());
-            const itemsToShow = shuffled.slice(0, 12); // يختار دائماً 12 صورة
+            const itemsToShow = shuffled.slice(0, 12);
             itemsToShow.forEach(item => {
                 const card = `
                     <div class="product-card">
@@ -160,4 +146,4 @@
         window.onload = loadRandomStore;
     </script>
 </body>
-</html
+</html>
