@@ -1,113 +1,94 @@
-/* تنسيق عام للجسم */
 body {
-    font-family: 'Almarai', sans-serif; 
-    background-color: #f5f7fa;
+    font-family: 'Almarai', sans-serif;
     margin: 0;
+    background-color: #f9f9f9;
+    direction: rtl;
+}
+
+/* الشريط العلوي */
+.navbar {
     display: flex;
-    justify-content: center;
-    color: #333;
-    line-height: 1.6;
-    direction: rtl; /* للتأكد من اتجاه النص العربي */
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-/* الحاوية الرئيسية للموقع */
-.container {
-    width: 100%;
-    max-width: 500px;
-    padding: 35px 20px;
-    text-align: center;
-    background-color: #ffffff;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+.search-container { flex-grow: 1; text-align: center; margin: 0 15px; }
+.search-container input {
+    width: 80%;
+    padding: 8px 15px;
     border-radius: 20px;
-    margin: 25px 15px;
+    border: 1px solid #ddd;
+    outline: none;
 }
 
-/* الشعار */
-.logo {
-    font-family: 'Changa', sans-serif;
-    font-size: 42px;
-    font-weight: 800;
-    color: #1a1a1a;
-    margin: 0;
-}
-
+.logo { font-family: 'Changa'; font-size: 24px; font-weight: bold; }
 .logo span { color: #fc5c65; }
 
-.tagline { font-weight: 700; color: #555; font-size: 1.15em; margin-top: 10px; }
-.sub-tagline { font-size: 0.98em; color: #777; margin-bottom: 30px; }
+/* القائمة الجانبية */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align: right;
+}
 
-/* ترتيب المنتجات (عمودين) */
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover { color: #f1f1f1; }
+.sidebar .closebtn { position: absolute; top: 0; left: 25px; font-size: 36px; }
+.sidebar-title { color: #fff; padding: 0 25px 20px; font-weight: bold; font-size: 22px; border-bottom: 1px solid #333; }
+
+.openbtn { font-size: 20px; cursor: pointer; background: none; border: none; }
+
+/* المحتوى والشبكة */
+.main-content { padding: 20px; max-width: 800px; margin: 0 auto; }
+.hero { text-align: center; padding: 20px 0; }
+
 .products-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    margin-bottom: 30px;
 }
 
-/* كرت المنتج */
 .product-card {
-    background: #fdfdfd;
-    border: 1px solid #e9e9e9;
-    border-radius: 15px;
-    text-decoration: none;
-    color: #333;
-    padding: 15px;
-    transition: transform 0.25s ease;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.product-card:hover { transform: translateY(-5px); }
+.product-card img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
+.product-card h3 { font-size: 14px; margin: 10px 0; height: 40px; overflow: hidden; }
 
-.product-image-wrapper img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.product-card h3 { font-size: 1em; margin: 10px 0; font-family: 'Changa'; }
-.product-card p { font-size: 0.8em; color: #666; flex-grow: 1; }
-
-/* زر الشراء */
-.shop-button {
+.buy-btn {
+    display: block;
     background: #fc5c65;
-    color: white;
-    padding: 8px;
-    border-radius: 20px;
-    font-size: 0.8em;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-/* الشارات (جديد/مبيعاً) */
-.badge {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    padding: 3px 8px;
-    border-radius: 5px;
-    font-size: 0.6em;
-    color: white;
-    z-index: 10;
-}
-.hot-badge { background: #E91E63; }
-.new-badge { background: #4CAF50; }
-
-/* زر التيك توك */
-.tiktok-btn {
-    background: #000;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 30px;
+    color: #fff;
     text-decoration: none;
-    display: inline-block;
-    margin-top: 15px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 13px;
     font-weight: bold;
 }
 
-footer {
-    margin-top: 30px;
-    font-size: 0.8em;
-    color: #888;
-}
