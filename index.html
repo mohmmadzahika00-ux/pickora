@@ -9,25 +9,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* تنسيقات القائمة */
         .submenu { padding-right: 20px; margin-bottom: 15px; }
         .submenu a { font-size: 13.5px !important; padding: 6px 15px !important; color: #bdc3c7 !important; border-bottom: none !important; display: block; }
         .submenu a:hover { color: #ffffff !important; transition: 0.3s; }
 
-        /* عنوان القائمة الرئيسي */
         .main-menu-label {
             color: #fff;
             font-family: 'Changa', sans-serif;
             font-size: 22px;
             padding: 20px 15px 10px 15px;
-            border-bottom: 1px solid #333;
-            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        /* زر التيك توك العائم */
+        /* تنسيق زر العودة للرئيسية داخل القائمة */
+        .back-home {
+            background: #222;
+            margin: 5px 15px 15px 15px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            text-align: center !important;
+            color: #00cec9 !important;
+            font-weight: bold;
+        }
+
         .tiktok-float {
             position: fixed;
             bottom: 20px;
@@ -45,12 +51,9 @@
             z-index: 1000;
             text-decoration: none;
             transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid #fe2c55; /* لون تيك توك المميز */
+            border: 2px solid #fe2c55;
         }
-        .tiktok-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(254, 44, 85, 0.5);
-        }
+        .tiktok-float:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(254, 44, 85, 0.5); }
     </style>
 </head>
 <body>
@@ -58,53 +61,33 @@
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         
-        <div class="main-menu-label">
-            <i class="fas fa-bars"></i> القائمة الرئيسية
-        </div>
+        <div class="main-menu-label"><i class="fas fa-bars"></i> القائمة الرئيسية</div>
+        
+        <a href="index.html" class="back-home">🏠 العودة للرئيسية</a>
         
         <div class="sidebar-title" style="color: #00cec9;">عالم كرة القدم ⚽</div>
         <div class="submenu">
-            <a href="#">أحذية النخبة</a>
-            <a href="#">أطقم تاريخية</a>
-            <a href="#">معدات تدريب</a>
-            <a href="#">إكسسوارات ملاعب</a>
-            <a href="#">كرات أصلية</a>
+            <a href="#">أحذية النخبة</a><a href="#">أطقم تاريخية</a><a href="#">معدات تدريب</a><a href="#">إكسسوارات ملاعب</a><a href="#">كرات أصلية</a>
         </div>
 
         <div class="sidebar-title" style="color: #ff79c6;">ركن الجمال ✨</div>
         <div class="submenu">
-            <a href="#">أجهزة عناية</a>
-            <a href="#">مكياج تريند</a>
-            <a href="#">حقائب فاخرة</a>
-            <a href="#">تصفيف شعر</a>
-            <a href="#">عطور ومسك</a>
+            <a href="#">أجهزة عناية</a><a href="#">مكياج تريند</a><a href="#">حقائب فاخرة</a><a href="#">تصفيف شعر</a><a href="#">عطور ومسك</a>
         </div>
 
         <div class="sidebar-title" style="color: #f1c40f;">مستلزمات المنزل 🏠</div>
         <div class="submenu">
-            <a href="#">أدوات مطبخ</a>
-            <a href="#">إضاءة ديكور</a>
-            <a href="#">منظمات ذكية</a>
-            <a href="#">مكانس لاسلكية</a>
-            <a href="#">ركن القهوة</a>
+            <a href="#">أدوات مطبخ</a><a href="#">إضاءة ديكور</a><a href="#">منظمات ذكية</a><a href="#">مكانس لاسلكية</a><a href="#">ركن القهوة</a>
         </div>
 
         <div class="sidebar-title" style="color: #8e44ad;">ركن الجيمنج 🎮</div>
         <div class="submenu">
-            <a href="#">إضاءات RGB</a>
-            <a href="#">يد تحكم</a>
-            <a href="#">سماعات محيطية</a>
-            <a href="#">طاولات وكراسي</a>
-            <a href="#">أدوات ستريمرز</a>
+            <a href="#">إضاءات RGB</a><a href="#">يد تحكم</a><a href="#">سماعات محيطية</a><a href="#">طاولات وكراسي</a><a href="#">أدوات ستريمرز</a>
         </div>
 
         <div class="sidebar-title" style="color: #e67e22;">عالم الأطفال 🧸</div>
         <div class="submenu">
-            <a href="#">ألعاب تعليمية</a>
-            <a href="#">سيارات كهرباء</a>
-            <a href="#">ألعاب كلاسيك</a>
-            <a href="#">ديكور غرف</a>
-            <a href="#">معدات مغامرة</a>
+            <a href="#">ألعاب تعليمية</a><a href="#">سيارات كهرباء</a><a href="#">ألعاب كلاسيك</a><a href="#">ديكور غرف</a><a href="#">معدات مغامرة</a>
         </div>
     </div>
 
@@ -114,35 +97,52 @@
 
     <nav class="navbar">
         <button class="openbtn" onclick="openNav()">☰</button>
-        <div class="search-container">
-            <input type="text" placeholder="ماذا تبحث اليوم؟">
-        </div>
+        <div class="search-container"><input type="text" placeholder="ماذا تبحث اليوم؟"></div>
         <div class="logo">P<span>i</span></div>
     </nav>
 
     <div class="main-content">
         <header class="hero">
             <h1>Pickora</h1>
-            <p>تشكيلة مختارة تتغير في كل مرة تزورنا فيها</p>
+            <p>منتجات مختارة تتغير مع كل زيارة</p>
         </header>
-
         <div id="dynamicGrid" class="products-grid"></div>
     </div>
 
     <script>
+        // قاعدة بيانات الصور (زدناها لـ 24 عشان تملأ الصفحة)
         const myDatabase = [
-            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Sport", link: "#" },
-            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Beauty", link: "#" },
-            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Gaming", link: "#" },
-            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Home", link: "#" },
-            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Kids", link: "#" }
+            { img: "https://via.placeholder.com/400x500/00cec9/fff?text=Sport+1", link: "#" },
+            { img: "https://via.placeholder.com/400x500/00cec9/fff?text=Sport+2", link: "#" },
+            { img: "https://via.placeholder.com/400x500/00cec9/fff?text=Sport+3", link: "#" },
+            { img: "https://via.placeholder.com/400x500/ff79c6/fff?text=Beauty+1", link: "#" },
+            { img: "https://via.placeholder.com/400x500/ff79c6/fff?text=Beauty+2", link: "#" },
+            { img: "https://via.placeholder.com/400x500/ff79c6/fff?text=Beauty+3", link: "#" },
+            { img: "https://via.placeholder.com/400x500/f1c40f/fff?text=Home+1", link: "#" },
+            { img: "https://via.placeholder.com/400x500/f1c40f/fff?text=Home+2", link: "#" },
+            { img: "https://via.placeholder.com/400x500/f1c40f/fff?text=Home+3", link: "#" },
+            { img: "https://via.placeholder.com/400x500/8e44ad/fff?text=Gaming+1", link: "#" },
+            { img: "https://via.placeholder.com/400x500/8e44ad/fff?text=Gaming+2", link: "#" },
+            { img: "https://via.placeholder.com/400x500/8e44ad/fff?text=Gaming+3", link: "#" },
+            { img: "https://via.placeholder.com/400x500/e67e22/fff?text=Kids+1", link: "#" },
+            { img: "https://via.placeholder.com/400x500/e67e22/fff?text=Kids+2", link: "#" },
+            { img: "https://via.placeholder.com/400x500/e67e22/fff?text=Kids+3", link: "#" },
+            { img: "https://via.placeholder.com/400x500/333/fff?text=Item+16", link: "#" },
+            { img: "https://via.placeholder.com/400x500/333/fff?text=Item+17", link: "#" },
+            { img: "https://via.placeholder.com/400x500/333/fff?text=Item+18", link: "#" },
+            { img: "https://via.placeholder.com/400x500/222/fff?text=Item+19", link: "#" },
+            { img: "https://via.placeholder.com/400x500/222/fff?text=Item+20", link: "#" },
+            { img: "https://via.placeholder.com/400x500/222/fff?text=Item+21", link: "#" },
+            { img: "https://via.placeholder.com/400x500/444/fff?text=Item+22", link: "#" },
+            { img: "https://via.placeholder.com/400x500/444/fff?text=Item+23", link: "#" },
+            { img: "https://via.placeholder.com/400x500/444/fff?text=Item+24", link: "#" }
         ];
 
         function loadRandomStore() {
             const grid = document.getElementById('dynamicGrid');
             grid.innerHTML = ''; 
             const shuffled = myDatabase.sort(() => 0.5 - Math.random());
-            const itemsToShow = shuffled.slice(0, 12);
+            const itemsToShow = shuffled.slice(0, 12); // يختار دائماً 12 صورة
             itemsToShow.forEach(item => {
                 const card = `
                     <div class="product-card">
