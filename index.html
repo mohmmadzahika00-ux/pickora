@@ -6,25 +6,50 @@
     <title>Pickora | المتجر الذكي</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Changa:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* تنسيقات القائمة الفرعية لتبدو احترافية */
+        /* تنسيقات القائمة */
         .submenu { padding-right: 20px; margin-bottom: 15px; }
-        .submenu a { 
-            font-size: 13.5px !important; 
-            padding: 6px 15px !important; 
-            color: #bdc3c7 !important; 
-            border-bottom: none !important;
-            display: block;
-        }
+        .submenu a { font-size: 13.5px !important; padding: 6px 15px !important; color: #bdc3c7 !important; border-bottom: none !important; display: block; }
         .submenu a:hover { color: #ffffff !important; transition: 0.3s; }
-        
-        /* تأثير عند تحميل الصور */
-        .product-card {
-            animation: fadeIn 0.8s ease-in-out;
+
+        /* عنوان القائمة الرئيسي */
+        .main-menu-label {
+            color: #fff;
+            font-family: 'Changa', sans-serif;
+            font-size: 22px;
+            padding: 20px 15px 10px 15px;
+            border-bottom: 1px solid #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        /* زر التيك توك العائم */
+        .tiktok-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #fe2c55; /* لون تيك توك المميز */
+        }
+        .tiktok-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(254, 44, 85, 0.5);
         }
     </style>
 </head>
@@ -33,7 +58,11 @@
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         
-        <div class="sidebar-title" style="color: #00cec9; margin-top:20px;">عالم كرة القدم ⚽</div>
+        <div class="main-menu-label">
+            <i class="fas fa-bars"></i> القائمة الرئيسية
+        </div>
+        
+        <div class="sidebar-title" style="color: #00cec9;">عالم كرة القدم ⚽</div>
         <div class="submenu">
             <a href="#">أحذية النخبة</a>
             <a href="#">أطقم تاريخية</a>
@@ -79,6 +108,10 @@
         </div>
     </div>
 
+    <a href="https://www.tiktok.com/@lukiane16?_r=1&_t=ZS-93huMDuVb0O" class="tiktok-float" target="_blank">
+        <i class="fab fa-tiktok"></i>
+    </a>
+
     <nav class="navbar">
         <button class="openbtn" onclick="openNav()">☰</button>
         <div class="search-container">
@@ -97,31 +130,19 @@
     </div>
 
     <script>
-        // --- 1. قاعدة بيانات الصور (المكان الذي ستضيف فيه روابطك) ---
         const myDatabase = [
-            // قسم الرياضة (أمثلة)
-            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Sport+1", link: "#" },
-            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Sport+2", link: "#" },
-            // قسم الجمال
-            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Beauty+1", link: "#" },
-            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Beauty+2", link: "#" },
-            // قسم الجيمنج
-            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Gaming+1", link: "#" },
-            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Gaming+2", link: "#" },
-            // أضف أي عدد من المنتجات هنا وسيقوم الموقع بخلطها تلقائياً
+            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Sport", link: "#" },
+            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Beauty", link: "#" },
+            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Gaming", link: "#" },
+            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Home", link: "#" },
+            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Kids", link: "#" }
         ];
 
-        // --- 2. محرك الخلط والعرض العشوائي ---
         function loadRandomStore() {
             const grid = document.getElementById('dynamicGrid');
-            grid.innerHTML = ''; // مسح المحتوى القديم
-
-            // خلط كل المنتجات الموجودة في قاعدة البيانات
+            grid.innerHTML = ''; 
             const shuffled = myDatabase.sort(() => 0.5 - Math.random());
-            
-            // اختيار أول 12 منتج لعرضهم في الصفحة الرئيسية
             const itemsToShow = shuffled.slice(0, 12);
-
             itemsToShow.forEach(item => {
                 const card = `
                     <div class="product-card">
@@ -133,11 +154,9 @@
             });
         }
 
-        // --- 3. وظائف القائمة الجانبية ---
         function openNav() { document.getElementById("mySidebar").style.width = "270px"; }
         function closeNav() { document.getElementById("mySidebar").style.width = "0"; }
 
-        // تشغيل المحرك عند تحميل الصفحة
         window.onload = loadRandomStore;
     </script>
 </body>
