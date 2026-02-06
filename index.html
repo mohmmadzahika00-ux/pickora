@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pickora | المتجر الشامل</title>
+    <title>Pickora | المتجر الذكي</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Changa:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* تحسينات إضافية للقائمة الفرعية */
-        .submenu { padding-right: 20px; margin-bottom: 10px; }
+        /* تنسيقات القائمة الفرعية لتبدو احترافية */
+        .submenu { padding-right: 20px; margin-bottom: 15px; }
         .submenu a { 
-            font-size: 14px !important; 
-            padding: 8px 15px !important; 
-            color: #999 !important; 
+            font-size: 13.5px !important; 
+            padding: 6px 15px !important; 
+            color: #bdc3c7 !important; 
             border-bottom: none !important;
+            display: block;
         }
-        .submenu a:hover { color: #fff !important; }
+        .submenu a:hover { color: #ffffff !important; transition: 0.3s; }
+        
+        /* تأثير عند تحميل الصور */
+        .product-card {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -23,58 +33,56 @@
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         
-        <div class="sidebar-title" style="color: #00cec9;">عالم كرة القدم ⚽</div>
+        <div class="sidebar-title" style="color: #00cec9; margin-top:20px;">عالم كرة القدم ⚽</div>
         <div class="submenu">
-            <a href="#">أحذية النخبة (Elite)</a>
-            <a href="#">أطقم الأندية التاريخية</a>
-            <a href="#">معدات التدريب الذكية</a>
-            <a href="#">إكسسوارات الملاعب</a>
-            <a href="#">كرات النسخ الأصلية</a>
+            <a href="#">أحذية النخبة</a>
+            <a href="#">أطقم تاريخية</a>
+            <a href="#">معدات تدريب</a>
+            <a href="#">إكسسوارات ملاعب</a>
+            <a href="#">كرات أصلية</a>
         </div>
 
         <div class="sidebar-title" style="color: #ff79c6;">ركن الجمال ✨</div>
         <div class="submenu">
-            <a href="#">أجهزة العناية بالبشرة</a>
-            <a href="#">مكياج "التريند"</a>
-            <a href="#">حقائب اليد الفاخرة</a>
-            <a href="#">أدوات تصفيف الشعر</a>
+            <a href="#">أجهزة عناية</a>
+            <a href="#">مكياج تريند</a>
+            <a href="#">حقائب فاخرة</a>
+            <a href="#">تصفيف شعر</a>
             <a href="#">عطور ومسك</a>
         </div>
 
         <div class="sidebar-title" style="color: #f1c40f;">مستلزمات المنزل 🏠</div>
         <div class="submenu">
-            <a href="#">أدوات المطبخ الذكية</a>
-            <a href="#">إضاءة "الديكور"</a>
-            <a href="#">منظمات المساحات</a>
-            <a href="#">أجهزة التنظيف اللاسلكية</a>
-            <a href="#">ركن القهوة (Coffee Bar)</a>
+            <a href="#">أدوات مطبخ</a>
+            <a href="#">إضاءة ديكور</a>
+            <a href="#">منظمات ذكية</a>
+            <a href="#">مكانس لاسلكية</a>
+            <a href="#">ركن القهوة</a>
         </div>
 
         <div class="sidebar-title" style="color: #8e44ad;">ركن الجيمنج 🎮</div>
         <div class="submenu">
-            <a href="#">إضاءات الـ RGB</a>
-            <a href="#">إكسسوارات الكونسول</a>
-            <a href="#">سماعات المحيطية</a>
-            <a href="#">كراسي وطاولات جيمنج</a>
-            <a href="#">إكسسوارات الستريمرز</a>
+            <a href="#">إضاءات RGB</a>
+            <a href="#">يد تحكم</a>
+            <a href="#">سماعات محيطية</a>
+            <a href="#">طاولات وكراسي</a>
+            <a href="#">أدوات ستريمرز</a>
         </div>
 
         <div class="sidebar-title" style="color: #e67e22;">عالم الأطفال 🧸</div>
         <div class="submenu">
-            <a href="#">ألعاب التعليم المبكر</a>
-            <a href="#">سيارات ودراجات كهربائية</a>
-            <a href="#">أجهزة ألعاب كلاسيكية</a>
-            <a href="#">ديكور غرف الأطفال</a>
-            <a href="#">معدات المغامرات</a>
+            <a href="#">ألعاب تعليمية</a>
+            <a href="#">سيارات كهرباء</a>
+            <a href="#">ألعاب كلاسيك</a>
+            <a href="#">ديكور غرف</a>
+            <a href="#">معدات مغامرة</a>
         </div>
-
-        <a href="index.html" style="margin-top:25px; border:1px solid #444; text-align:center; background:#222;">🏠 الرئيسية</a>
     </div>
 
     <nav class="navbar">
         <button class="openbtn" onclick="openNav()">☰</button>
         <div class="search-container">
-            <input type="text" placeholder="استكشف المنتجات...">
+            <input type="text" placeholder="ماذا تبحث اليوم؟">
         </div>
         <div class="logo">P<span>i</span></div>
     </nav>
@@ -82,28 +90,55 @@
     <div class="main-content">
         <header class="hero">
             <h1>Pickora</h1>
-            <p>وجهتك لكل ما هو مميز وجديد</p>
+            <p>تشكيلة مختارة تتغير في كل مرة تزورنا فيها</p>
         </header>
 
-        <div class="products-grid">
-            <div class="product-card"><img src="https://via.placeholder.com/400x500?text=Product+1"><a href="#" class="buy-btn">تفاصيل المنتج</a></div>
-            <div class="product-card"><img src="https://via.placeholder.com/400x500?text=Product+2"><a href="#" class="buy-btn">تفاصيل المنتج</a></div>
-            <div class="product-card"><img src="https://via.placeholder.com/400x500?text=Product+3"><a href="#" class="buy-btn">تفاصيل المنتج</a></div>
-            <div class="product-card"><img src="https://via.placeholder.com/400x500?text=Product+4"><a href="#" class="buy-btn">تفاصيل المنتج</a></div>
-            <div class="product-card"><img src="https://via.placeholder.com/400x500?text=Product+5"><a href="#" class="buy-btn">تفاصيل المنتج</a></div>
-            <div class="product-card"><img src="https://via.placeholder.com/400x500?text=Product+6"><a href="#" class="buy-btn">تفاصيل المنتج</a></div>
-            <div class="product-card"><img src="https://via.placeholder.com/400x500?text=Product+7"><a href="#" class="buy-btn">تفاصيل المنتج</a></div>
-            <div class="product-card"><img src="https://via.placeholder.com/400x500?text=Product+8"><a href="#" class="buy-btn">تفاصيل المنتج</a></div>
-            <div class="product-card"><img src="https://via.placeholder.com/400x500?text=Product+9"><a href="#" class="buy-btn">تفاصيل المنتج</a></div>
-            <div class="product-card"><img src="https://via.placeholder.com/400x500?text=Product+10"><a href="#" class="buy-btn">تفاصيل المنتج</a></div>
-            <div class="product-card"><img src="https://via.placeholder.com/400x500?text=Product+11"><a href="#" class="buy-btn">تفاصيل المنتج</a></div>
-            <div class="product-card"><img src="https://via.placeholder.com/400x500?text=Product+12"><a href="#" class="buy-btn">تفاصيل المنتج</a></div>
-        </div>
+        <div id="dynamicGrid" class="products-grid"></div>
     </div>
 
     <script>
-        function openNav() { document.getElementById("mySidebar").style.width = "250px"; }
+        // --- 1. قاعدة بيانات الصور (المكان الذي ستضيف فيه روابطك) ---
+        const myDatabase = [
+            // قسم الرياضة (أمثلة)
+            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Sport+1", link: "#" },
+            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Sport+2", link: "#" },
+            // قسم الجمال
+            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Beauty+1", link: "#" },
+            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Beauty+2", link: "#" },
+            // قسم الجيمنج
+            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Gaming+1", link: "#" },
+            { img: "https://via.placeholder.com/400x500/111?text=Pickora+Gaming+2", link: "#" },
+            // أضف أي عدد من المنتجات هنا وسيقوم الموقع بخلطها تلقائياً
+        ];
+
+        // --- 2. محرك الخلط والعرض العشوائي ---
+        function loadRandomStore() {
+            const grid = document.getElementById('dynamicGrid');
+            grid.innerHTML = ''; // مسح المحتوى القديم
+
+            // خلط كل المنتجات الموجودة في قاعدة البيانات
+            const shuffled = myDatabase.sort(() => 0.5 - Math.random());
+            
+            // اختيار أول 12 منتج لعرضهم في الصفحة الرئيسية
+            const itemsToShow = shuffled.slice(0, 12);
+
+            itemsToShow.forEach(item => {
+                const card = `
+                    <div class="product-card">
+                        <img src="${item.img}" alt="منتج">
+                        <a href="${item.link}" class="buy-btn">اكتشف الآن</a>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        // --- 3. وظائف القائمة الجانبية ---
+        function openNav() { document.getElementById("mySidebar").style.width = "270px"; }
         function closeNav() { document.getElementById("mySidebar").style.width = "0"; }
+
+        // تشغيل المحرك عند تحميل الصفحة
+        window.onload = loadRandomStore;
     </script>
 </body>
 </html>
