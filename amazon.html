@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickora | قسم أمازون</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --amazon: #FFD814; --bg: #f0f2f5; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg); margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        
+        /* شريط العودة للرئيسية */
+        .back-nav { 
+            width: 100%; 
+            background: #fff; 
+            padding: 15px 0; 
+            display: flex; 
+            justify-content: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        }
+        .back-btn { 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: bold; 
+            font-size: 16px; 
+            border: 2px solid #333; 
+            padding: 8px 25px; 
+            border-radius: 50px; 
+            transition: 0.3s; 
+        }
+        .back-btn:hover { background: #333; color: #fff; }
+
+        header { text-align: center; padding: 30px 20px; }
+        header h1 { font-size: 32px; margin: 0; color: #232f3e; }
+        header p { color: #666; margin: 5px 0 0; }
+
+        .container { width: 95%; max-width: 500px; margin-top: 10px; }
+        
+        /* تصميم الكروت اللي عجبك */
+        .product-card { 
+            background: #fff; 
+            border-radius: 20px; 
+            margin-bottom: 30px; 
+            overflow: hidden; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            border: 1px solid #ddd; 
+        }
+        .product-image { width: 100%; height: auto; display: block; background: #f9f9f9; }
+        .product-info { padding: 20px; text-align: center; }
+        .product-info h3 { margin: 0; font-size: 18px; color: #22
