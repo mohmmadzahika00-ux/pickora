@@ -9,54 +9,13 @@
         :root { --amazon: #FFD814; --temu: #ff5722; --shein: #000000; }
         body { font-family: 'Cairo', sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
         
-        .tiktok-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-            background: #fff;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .tiktok-link { 
-            background: #000; 
-            color: white; 
-            text-decoration: none; 
-            padding: 12px 25px; 
-            border-radius: 10px; 
-            font-weight: bold; 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-            transition: 0.3s;
-            border: 2px solid #000;
-        }
-        .tiktok-link:hover { background: #fff; color: #000; }
+        .tiktok-container { width: 100%; display: flex; justify-content: center; padding: 20px 0; background: #fff; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .tiktok-link { background: #000; color: white; text-decoration: none; padding: 12px 25px; border-radius: 10px; font-weight: bold; display: flex; align-items: center; gap: 10px; transition: 0.3s; border: 2px solid #000; }
         
-        header {
-            width: 100%;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+        header { width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        header h1 { font-size: 42px; margin: 10px 0 5px; color: #1a1a1a; letter-spacing: 3px; }
+        header p { color: #666; margin-bottom: 20px; }
 
-        header h1 { 
-            font-size: 42px; 
-            margin: 10px 0 5px; 
-            color: #1a1a1a; 
-            letter-spacing: 3px; 
-            text-align: center;
-            width: 100%;
-        }
-
-        header p { color: #666; margin-bottom: 20px; text-align: center; }
-
-        .store-nav { display: flex; gap: 8px; margin-bottom: 20px; position: sticky; top: 0; background: #f0f2f5; padding: 10px; z-index: 100; width: 100%; justify-content: center; }
-        .store-nav a { padding: 8px 12px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; font-size: 13px; }
-        
         .container { width: 95%; max-width: 500px; }
         .section-title { width: 100%; text-align: center; padding: 15px; background: #333; color: #fff; margin: 30px 0 15px; border-radius: 15px; font-weight: bold; font-size: 20px; box-sizing: border-box; }
         
@@ -69,7 +28,6 @@
         .amazon-btn { background: var(--amazon); color: #000; border: 1px solid #e2c017; }
         .temu-btn { background: var(--temu); color: #fff; }
         .shein-btn { background: var(--shein); color: #fff; }
-
         .buy-btn:hover { transform: scale(1.03); opacity: 0.9; }
         
         footer { padding: 40px; color: #888; text-align: center; font-size: 14px; width: 100%; }
@@ -78,7 +36,7 @@
 <body>
 
     <div class="tiktok-container">
-        <a href="https://www.tiktok.com/@pickora2026" class="tiktok-link" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.tiktok.com/@pickora2026" class="tiktok-link" target="_blank">
             <span>🎵 تابعنا على TikTok</span>
         </a>
     </div>
@@ -88,36 +46,27 @@
         <p>بوابتك لأفضل المنتجات العالمية ✨</p>
     </header>
 
-    <div class="store-nav">
-        <a href="#amazon" style="background: #232f3e;">Amazon</a>
-        <a href="#temu" style="background: #ff5722;">Temu</a>
-        <a href="#shein" style="background: #000;">Shein</a>
-    </div>
-
     <div class="container">
         
         <div id="amazon" class="section-title">📦 متجر أمازون - Amazon</div>
         <div class="product-card">
             <img src="https://via.placeholder.com/500x500?text=Amazon+Store" class="product-image">
-            <div class="product-info">
-                <h3>دليل منتجات أمازون المختارة</h3>
-                <p style="font-size: 14px; color: #777;">اضغط للدخول ومشاهدة كافة العروض</p>
-            </div>
+            <div class="product-info"><h3>دليل منتجات أمازون المختارة</h3></div>
             <a href="amazon.html" class="buy-btn amazon-btn">دخول قسم أمازون</a>
         </div>
         
         <div id="temu" class="section-title">🧡 متجر تيمو - Temu</div>
         <div class="product-card">
             <img src="https://via.placeholder.com/500x500?text=Temu+Store" class="product-image">
-            <div class="product-info"><h3>قريباً: عروض تيمو المميزة</h3></div>
-            <a href="#" class="buy-btn temu-btn">قيد التجهيز</a>
+            <div class="product-info"><h3>عروض تيمو الحصرية</h3></div>
+            <a href="temu.html" class="buy-btn temu-btn">دخول قسم تيمو</a>
         </div>
 
         <div id="shein" class="section-title">🖤 متجر شي إن - Shein</div>
         <div class="product-card">
             <img src="https://via.placeholder.com/500x500?text=Shein+Store" class="product-image">
-            <div class="product-info"><h3>قريباً: تشكيلة شي إن فاشن</h3></div>
-            <a href="#" class="buy-btn shein-btn">قيد التجهيز</a>
+            <div class="product-info"><h3>تشكيلة شي إن الجديدة</h3></div>
+            <a href="shein.html" class="buy-btn shein-btn">دخول قسم شي إن</a>
         </div>
 
     </div>
