@@ -34,10 +34,9 @@
         }
         .tiktok-link:hover { background: #fff; color: #000; }
         
-        /* التعديل هنا لتوسيط العنوان */
         header {
             width: 100%;
-            text-align: center; /* توسيط المحتوى */
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -45,10 +44,10 @@
         }
 
         header h1 { 
-            font-size: 42px; /* كبرنا الخط شوي */
+            font-size: 42px; 
             margin: 10px 0 5px; 
             color: #1a1a1a; 
-            letter-spacing: 3px; /* تباعد الحروف بيعطي شكل براند فخم */
+            letter-spacing: 3px; 
             text-align: center;
             width: 100%;
         }
@@ -66,10 +65,12 @@
         .product-info { padding: 20px; text-align: center; }
         .product-info h3 { margin: 0; font-size: 18px; color: #222; }
         
-        .buy-btn { display: block; padding: 18px; text-decoration: none; font-weight: bold; border-radius: 15px; margin: 0 20px 20px; text-align: center; font-size: 17px; }
-        .amazon-btn { background: var(--amazon); color: #000; }
+        .buy-btn { display: block; padding: 18px; text-decoration: none; font-weight: bold; border-radius: 15px; margin: 0 20px 20px; text-align: center; font-size: 17px; transition: 0.3s; }
+        .amazon-btn { background: var(--amazon); color: #000; border: 1px solid #e2c017; }
         .temu-btn { background: var(--temu); color: #fff; }
         .shein-btn { background: var(--shein); color: #fff; }
+
+        .buy-btn:hover { transform: scale(1.03); opacity: 0.9; }
         
         footer { padding: 40px; color: #888; text-align: center; font-size: 14px; width: 100%; }
     </style>
@@ -84,7 +85,7 @@
 
     <header>
         <h1>PICKORA</h1>
-        <p>مختاراتنا لك من عروض اليوم</p>
+        <p>بوابتك لأفضل المنتجات العالمية ✨</p>
     </header>
 
     <div class="store-nav">
@@ -94,26 +95,31 @@
     </div>
 
     <div class="container">
-        <div id="amazon" class="section-title">📦 Amazon Deals</div>
+        
+        <div id="amazon" class="section-title">📦 متجر أمازون - Amazon</div>
         <div class="product-card">
-            <img src="https://via.placeholder.com/500x500?text=Amazon+Product" class="product-image">
-            <div class="product-info"><h3>منتج أمازون القادم</h3></div>
-            <a href="#" class="buy-btn amazon-btn">اطلب من Amazon</a>
+            <img src="https://via.placeholder.com/500x500?text=Amazon+Store" class="product-image">
+            <div class="product-info">
+                <h3>دليل منتجات أمازون المختارة</h3>
+                <p style="font-size: 14px; color: #777;">اضغط للدخول ومشاهدة كافة العروض</p>
+            </div>
+            <a href="amazon.html" class="buy-btn amazon-btn">دخول قسم أمازون</a>
         </div>
         
-        <div id="temu" class="section-title">🧡 Temu Deals</div>
+        <div id="temu" class="section-title">🧡 متجر تيمو - Temu</div>
         <div class="product-card">
-            <img src="https://via.placeholder.com/500x500?text=Temu+Product" class="product-image">
-            <div class="product-info"><h3>منتج تيمو القادم</h3></div>
-            <a href="#" class="buy-btn temu-btn">اطلب من Temu</a>
+            <img src="https://via.placeholder.com/500x500?text=Temu+Store" class="product-image">
+            <div class="product-info"><h3>قريباً: عروض تيمو المميزة</h3></div>
+            <a href="#" class="buy-btn temu-btn">قيد التجهيز</a>
         </div>
 
-        <div id="shein" class="section-title">🖤 Shein Deals</div>
+        <div id="shein" class="section-title">🖤 متجر شي إن - Shein</div>
         <div class="product-card">
-            <img src="https://via.placeholder.com/500x500?text=Shein+Product" class="product-image">
-            <div class="product-info"><h3>منتج شي إن القادم</h3></div>
-            <a href="#" class="buy-btn shein-btn">اطلب من Shein</a>
+            <img src="https://via.placeholder.com/500x500?text=Shein+Store" class="product-image">
+            <div class="product-info"><h3>قريباً: تشكيلة شي إن فاشن</h3></div>
+            <a href="#" class="buy-btn shein-btn">قيد التجهيز</a>
         </div>
+
     </div>
 
     <footer>&copy; 2026 Pickora Hub</footer>
