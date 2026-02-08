@@ -6,128 +6,59 @@
     <title>Pickora | بيكورا - عروض المتاجر العالمية</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --amazon-color: #FFD814;
-            --temu-color: #ff5722;
-            --shein-color: #000000;
-        }
-
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* تنسيق رابط التيك توك العلوي */
-        .tiktok-link {
-            background: linear-gradient(45deg, #69C9D0, #EE1D52);
-            color: white;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: bold;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        :root { --amazon: #FFD814; --temu: #ff5722; --shein: #000000; }
+        body { font-family: 'Cairo', sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        
+        /* تنسيق رابط التيك توك الجديد */
+        .tiktok-link { 
+            background: linear-gradient(45deg, #69C9D0, #EE1D52); 
+            color: white; 
+            text-decoration: none; 
+            padding: 15px 30px; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            margin: 20px 0; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
             transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-align: center;
         }
-
-        .tiktok-link:hover { transform: scale(1.05); }
-
-        header h1 { color: #222; margin-bottom: 5px; font-size: 35px; }
+        .tiktok-link:hover { transform: scale(1.05); opacity: 0.9; }
+        
+        header h1 { font-size: 35px; margin-bottom: 5px; color: #1a1a1a; }
         header p { color: #666; margin-top: 0; }
 
-        /* شريط المتاجر */
-        .store-nav {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            width: 90%;
-            justify-content: center;
-            position: sticky;
-            top: 0;
-            background: #f0f2f5;
-            padding: 10px 0;
-            z-index: 100;
-        }
-
-        .store-nav a {
-            padding: 10px 15px;
-            border-radius: 10px;
-            text-decoration: none;
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        /* تصميم المستطيلات (المنتجات) */
-        .container { width: 95%; max-width: 600px; }
-
-        .product-card {
-            background: #fff;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 1px solid #ddd;
-        }
-
-        .product-image {
-            width: 100%;
-            height: auto;
-            max-height: 450px;
-            display: block;
-            background: #f9f9f9;
-        }
-
-        .product-info { padding: 15px; text-align: center; }
-        .product-info h3 { margin: 5px 0; font-size: 18px; color: #333; }
-
-        .buy-btn {
-            display: block;
-            padding: 18px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 15px;
-            font-size: 18px;
-            transition: 0.3s;
-            text-align: center;
-            margin: 0 15px 20px;
-        }
-
-        .amazon-btn { background-color: var(--amazon-color); color: #000; }
-        .temu-btn { background-color: var(--temu-color); color: #fff; }
-        .shein-btn { background-color: var(--shein-color); color: #fff; }
-
-        .section-title {
-            width: 100%;
-            text-align: center;
-            padding: 15px;
-            background: #333;
-            color: #fff;
-            margin: 40px 0 20px;
-            font-weight: bold;
-            border-radius: 10px;
-            font-size: 22px;
-        }
+        .store-nav { display: flex; gap: 10px; margin-bottom: 20px; position: sticky; top: 0; background: #f0f2f5; padding: 10px; z-index: 100; }
+        .store-nav a { padding: 10px 15px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; font-size: 14px; transition: 0.2s; }
+        .store-nav a:hover { opacity: 0.8; }
+        
+        .container { width: 95%; max-width: 500px; }
+        .section-title { width: 100%; text-align: center; padding: 15px; background: #333; color: #fff; margin: 30px 0 15px; border-radius: 15px; font-weight: bold; font-size: 20px; box-sizing: border-box; }
+        
+        .product-card { background: #fff; border-radius: 20px; margin-bottom: 30px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 1px solid #ddd; transition: 0.3s; }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-image { width: 100%; height: auto; display: block; background: #f9f9f9; }
+        .product-info { padding: 20px; text-align: center; }
+        .product-info h3 { margin: 0; font-size: 18px; color: #222; }
+        
+        .buy-btn { display: block; padding: 18px; text-decoration: none; font-weight: bold; border-radius: 15px; margin: 0 20px 20px; text-align: center; font-size: 17px; transition: 0.3s; }
+        .amazon-btn { background: var(--amazon); color: #000; border: 1px solid #e2c017; }
+        .temu-btn { background: var(--temu); color: #fff; }
+        .shein-btn { background: var(--shein); color: #fff; }
+        
+        footer { padding: 40px; color: #888; text-align: center; font-size: 14px; }
     </style>
 </head>
 <body>
 
-    <a href="https://www.tiktok.com" target="_blank" class="tiktok-link">
-        <span>🎵 تابعونا على تيك توك لمشاهدة المنتجات الحقيقية</span>
+    <a href="https://www.tiktok.com/@pickora2026" target="_blank" class="tiktok-link">
+        <span>🎵 تابع Pickora على تيك توك</span>
     </a>
 
-    <header style="text-align: center;">
+    <header>
         <h1>PICKORA</h1>
-        <p>دليلك لأفضل المنتجات العالمية المختارة</p>
+        <p>مختاراتنا لك من عروض اليوم</p>
     </header>
 
     <div class="store-nav">
@@ -138,56 +69,36 @@
 
     <div class="container">
         
-        <div id="amazon" class="section-title">📦 قسم أمازون - Amazon</div>
+        <div id="amazon" class="section-title">📦 Amazon Deals</div>
         
-        <script>
-            // هذه حركة برمجية سريعة لعمل 20 خانة لأمازون دون كتابة كود طويل جداً
-            for (let i = 1; i <= 20; i++) {
-                document.write(`
-                    <div class="product-card">
-                        <img src="https://via.placeholder.com/500x500?text=Amazon+Product+${i}" class="product-image">
-                        <div class="product-info">
-                            <h3>منتج أمازون رقم ${i}</h3>
-                        </div>
-                        <a href="#" class="buy-btn amazon-btn">اطلب من Amazon</a>
-                    </div>
-                `);
-            }
-        </script>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/500x500?text=Amazon+Product" class="product-image">
+            <div class="product-info"><h3>منتج أمازون القادم</h3></div>
+            <a href="#" class="buy-btn amazon-btn">اطلب من Amazon</a>
+        </div>
+        
+        <div id="temu" class="section-title">🧡 Temu Deals</div>
+        
+        <div class="product-card">
+            <img src="https://via.placeholder.com/500x500?text=Temu+Product" class="product-image">
+            <div class="product-info"><h3>منتج تيمو القادم</h3></div>
+            <a href="#" class="buy-btn temu-btn">اطلب من Temu</a>
+        </div>
 
-        <div id="temu" class="section-title">🧡 قسم تيمو - Temu</div>
-        <script>
-            for (let i = 1; i <= 20; i++) {
-                document.write(`
-                    <div class="product-card">
-                        <img src="https://via.placeholder.com/500x500?text=Temu+Product+${i}" class="product-image">
-                        <div class="product-info">
-                            <h3>منتج تيمو رقم ${i}</h3>
-                        </div>
-                        <a href="#" class="buy-btn temu-btn">اطلب من Temu</a>
-                    </div>
-                `);
-            }
-        </script>
-
-        <div id="shein" class="section-title">🖤 قسم شي إن - Shein</div>
-        <script>
-            for (let i = 1; i <= 20; i++) {
-                document.write(`
-                    <div class="product-card">
-                        <img src="https://via.placeholder.com/500x500?text=Shein+Product+${i}" class="product-image">
-                        <div class="product-info">
-                            <h3>منتج شي إن رقم ${i}</h3>
-                        </div>
-                        <a href="#" class="buy-btn shein-btn">اطلب من Shein</a>
-                    </div>
-                `);
-            }
-        </script>
+        <div id="shein" class="section-title">🖤 Shein Deals</div>
+        
+        <div class="product-card">
+            <img src="https://via.placeholder.com/500x500?text=Shein+Product" class="product-image">
+            <div class="product-info"><h3>منتج شي إن القادم</h3></div>
+            <a href="#" class="buy-btn shein-btn">اطلب من Shein</a>
+        </div>
 
     </div>
 
-    <footer style="padding: 40px; color: #888;">&copy; 2026 Pickora Hub</footer>
+    <footer>
+        &copy; 2026 Pickora Hub <br>
+        تسوق بذكاء.. وفر أكثر
+    </footer>
 
 </body>
 </html>
