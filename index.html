@@ -9,7 +9,6 @@
         :root { --amazon: #FFD814; --temu: #ff5722; --shein: #000000; }
         body { font-family: 'Cairo', sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
         
-        /* التنسيق الجديد لرابط التيك توك ليكون واضحاً وقابلاً للضغط بسهولة */
         .tiktok-container {
             width: 100%;
             display: flex;
@@ -21,7 +20,7 @@
         }
 
         .tiktok-link { 
-            background: #000; /* لون تيك توك الأساسي */
+            background: #000; 
             color: white; 
             text-decoration: none; 
             padding: 12px 25px; 
@@ -35,8 +34,26 @@
         }
         .tiktok-link:hover { background: #fff; color: #000; }
         
-        header h1 { font-size: 35px; margin: 10px 0 5px; color: #1a1a1a; }
-        header p { color: #666; margin-bottom: 20px; }
+        /* التعديل هنا لتوسيط العنوان */
+        header {
+            width: 100%;
+            text-align: center; /* توسيط المحتوى */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h1 { 
+            font-size: 42px; /* كبرنا الخط شوي */
+            margin: 10px 0 5px; 
+            color: #1a1a1a; 
+            letter-spacing: 3px; /* تباعد الحروف بيعطي شكل براند فخم */
+            text-align: center;
+            width: 100%;
+        }
+
+        header p { color: #666; margin-bottom: 20px; text-align: center; }
 
         .store-nav { display: flex; gap: 8px; margin-bottom: 20px; position: sticky; top: 0; background: #f0f2f5; padding: 10px; z-index: 100; width: 100%; justify-content: center; }
         .store-nav a { padding: 8px 12px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; font-size: 13px; }
@@ -54,7 +71,7 @@
         .temu-btn { background: var(--temu); color: #fff; }
         .shein-btn { background: var(--shein); color: #fff; }
         
-        footer { padding: 40px; color: #888; text-align: center; font-size: 14px; }
+        footer { padding: 40px; color: #888; text-align: center; font-size: 14px; width: 100%; }
     </style>
 </head>
 <body>
