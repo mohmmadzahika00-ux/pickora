@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أمازون | قسم السيارات والرحلات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --amazon: #FF9900; --cars-gray: #444; --dark: #131921; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Cairo', sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+        
+        /* الهيدر */
+        .header { background: var(--dark); color: white; padding: 15px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .header a { color: white; text-decoration: none; font-size: 14px; border: 1px solid #555; padding: 5px 10px; border-radius: 5px; background: #232f3e; }
 
+        /* محرك البحث */
+        .search-container { background: white; padding: 15px; position: sticky; top: 55px; z-index: 999; border-bottom: 3px solid var(--cars-gray); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .search-container input { width: 100%; padding: 12px; border-radius: 25px; border: 1px solid #ddd; font-family: 'Cairo'; outline: none; box-sizing: border-box; }
+
+        .container { padding: 15px; max-width: 500px; margin: auto; }
+        
+        /* تصميم الكروت */
+        .product-card { background: white; border-radius: 12px; margin-bottom: 25px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #ddd; transition: 0.3s; }
+        .product-card img { width: 100%; height: auto; display: block; filter: contrast(1.05); }
+        .p-info { padding: 20px; text-align: center; }
+        .p-info h3 { font-size: 18px; margin-bottom: 15px; color: #111; font-weight: bold; line-height: 1.5; }
+        
+        /* زر الشراء */
+        .buy-btn { display: block; background: var(--amazon); color: black; text-decoration: none; padding: 14px; border-radius: 8px; font-weight: bold; font-size: 16px; border-bottom: 2px solid #e2c017; }
+        
+        .highlight { border: 2px solid var(--amazon); transform: scale(1.02); box-shadow: 0 0 15px rgba(255,153,0,0.2); }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <a href="amazon.html">⬅ عودة</a>
+    <strong>🚗 قسم السيارات والرحلات</strong>
+    <div style="width:40px;"></div>
+</div>
+
+<div class="search-container">
+    <input type="text" id="searchInput" onkeyup="smartSearch()" placeholder="ابحث عن (مكنسة، شاحن، منظم، إضاءة)...">
+</div>
+
+<div class="container" id="productBox">
+    
+    <div class="product-card product-item">
+        <img src="https://via.placeholder.com/500x500?text=Car+Vacuum" alt="مكنسة سيارة">
+        <div class="p-info">
+            <h3>مكنسة سيارة لاسلكية قوية لشفط الغبار والأماكن الضيقة</h3>
+            <a href="#" class="buy-btn">🛒 عرض على أمازون</a>
+        </div>
+    </div>
+
+    <div class="product-card product-item">
+        <img src="https://via.placeholder.com/500x500?text=Car+Organizer" alt="منظم">
+        <div class="p-info">
+            <h3>منظم خلف المقعد متعدد الجيوب لحفظ الأغراض</h3>
+            <a href="#" class="buy-btn">🛒 عرض على أمازون</a>
+        </div>
+    </div>
