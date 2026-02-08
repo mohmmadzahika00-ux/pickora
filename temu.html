@@ -3,41 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pickora | عروض تيمو</title>
+    <title>Pickora | متجر تيمو</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --temu: #ff5722; --bg: #f0f2f5; }
-        body { font-family: 'Cairo', sans-serif; background-color: var(--bg); margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
-        .back-nav { width: 100%; background: #fff; padding: 15px 0; display: flex; justify-content: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .back-btn { text-decoration: none; color: #333; font-weight: bold; font-size: 16px; border: 2px solid #333; padding: 8px 25px; border-radius: 50px; transition: 0.3s; }
-        .back-btn:hover { background: #333; color: #fff; }
-        header { text-align: center; padding: 30px 20px; }
-        header h1 { font-size: 32px; margin: 0; color: var(--temu); }
-        .container { width: 95%; max-width: 500px; margin-top: 10px; }
-        .product-card { background: #fff; border-radius: 20px; margin-bottom: 30px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 1px solid #ddd; }
-        .product-image { width: 100%; height: auto; display: block; background: #f9f9f9; }
-        .product-info { padding: 20px; text-align: center; }
-        .product-info h3 { margin: 0; font-size: 18px; color: #222; }
-        .buy-btn { display: block; padding: 18px; text-decoration: none; font-weight: bold; border-radius: 15px; margin: 0 20px 20px; text-align: center; font-size: 17px; background: var(--temu); color: #fff; transition: 0.3s; }
-        .buy-btn:hover { transform: scale(1.02); opacity: 0.9; }
-        footer { padding: 40px; color: #888; text-align: center; font-size: 14px; }
+        :root { --temu: #ff5722; --bg: #f4f7f6; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg); margin: 0; padding: 0; }
+        
+        /* الهيدر والقائمة الجانبية */
+        .top-nav { background: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .menu-btn { font-size: 24px; cursor: pointer; background: none; border: none; color: var(--temu); }
+        .back-link { text-decoration: none; color: #333; font-weight: bold; font-size: 14px; }
+
+        /* القائمة الجانبية المنسدلة */
+        .sidebar { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; right: 0; background-color: #fff; overflow-x: hidden; transition: 0.5s; padding-top: 60px; box-shadow: -2px 0 10px rgba(0,0,0,0.2); }
+        .sidebar a { padding: 15px 25px; text-decoration: none; font-size: 18px; color: #333; display: block; transition: 0.3s; border-bottom: 1px solid #eee; }
+        .sidebar a:hover { background-color: var(--temu); color: white; }
+        .sidebar .closebtn { position: absolute; top: 0; left: 25px; font-size: 36px; margin-right: 50px; color: var(--temu); }
+
+        /* الأقسام والمنتجات */
+        header { text-align: center; padding: 20px; background: white; margin-bottom: 10px; }
+        header h1 { color: var(--temu); margin: 0; font-size: 28px; }
+        
+        .container { width: 95%; max-width: 500px; margin: auto; padding-bottom: 50px; }
+        .section-header { background: var(--temu); color: white; padding: 12px; border-radius: 10px; margin: 30px 0 15px; font-weight: bold; text-align: center; }
+        
+        .product-card { background: #fff; border-radius: 15px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .product-image { width: 100%; height: auto; display: block; }
+        .product-info { padding: 15px; text-align: center; }
+        .product-info h3 { margin: 0; font-size: 16px; color: #333; }
+        .buy-btn { display: block; padding: 15px; text-decoration: none; font-weight: bold; border-radius: 10px; margin: 10px 15px 15px; text-align: center; background: var(--temu); color: #fff; }
+
+        .overlay { display:none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 1500; cursor: pointer; }
     </style>
 </head>
 <body>
-    <div class="back-nav">
-        <a href="index.html" class="back-btn">⬅ العودة للرئيسية</a>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#smart-home" onclick="closeNav()">🏠 المنزل الذكي</a>
+  <a href="#tech" onclick="closeNav()">💻 التقنية والاكسسوارات</a>
+  <a href="#beauty" onclick="closeNav()">💄 الجمال والعناية</a>
+  <a href="#sports" onclick="closeNav()">⚽ الرياضة والرشاقة</a>
+  <a href="#cars" onclick="closeNav()">🚗 السيارات والرحلات</a>
+</div>
+
+<div id="main">
+    <div class="top-nav">
+        <button class="menu-btn" onclick="openNav()">☰ الأقسام</button>
+        <a href="index.html" class="back-link">⬅ الرئيسية</a>
     </div>
+
     <header>
-        <h1>🧡 عروض تيمو - Temu</h1>
-        <p>أقوى الخصومات والمنتجات الترند</p>
+        <h1>عروض تيمو المميزة</h1>
+        <p>اختر القسم المفضل لديك من القائمة</p>
     </header>
+
     <div class="container">
+        
+        <div id="smart-home" class="section-header">🏠 أدوات المنزل الذكي</div>
         <div class="product-card">
-            <img src="https://via.placeholder.com/500x500?text=Temu+Product" class="product-image">
-            <div class="product-info"><h3>منتج تيمو الأول - قريباً</h3></div>
-            <a href="#" class="buy-btn">اطلب من Temu</a>
+            <img src="https://via.placeholder.com/500x500?text=Smart+Home" class="product-image">
+            <div class="product-info"><h3>منظمات مطبخ ذكية</h3></div>
+            <a href="#" class="buy-btn">اطلب من تيمو</a>
         </div>
+
+        <div id="tech" class="section-header">💻 التقنية والاكسسوارات</div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/500x500?text=Tech" class="product-image">
+            <div class="product-info"><h3>ساعة ذكية Ultra ترند</h3></div>
+            <a href="#" class="buy-btn">اطلب من تيمو</a>
+        </div>
+
+        <div id="beauty" class="section-header">💄 الجمال والعناية</div>
+         <div id="sports" class="section-header">⚽ الرياضة والرشاقة</div>
+         <div id="cars" class="section-header">🚗 السيارات والرحلات</div>
+
     </div>
-    <footer>&copy; 2026 Pickora Hub</footer>
+</div>
+
+<div id="overlay" class="overlay" onclick="closeNav()"></div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("overlay").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("overlay").style.display = "none";
+}
+</script>
+
 </body>
 </html>
