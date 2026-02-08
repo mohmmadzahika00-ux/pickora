@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أمازون | قسم الرياضة والرشاقة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --amazon: #FF9900; --sports-blue: #007185; --dark: #131921; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Cairo', sans-serif; background: #f0f2f2; margin: 0; padding: 0; }
+        
+        /* الهيدر */
+        .header { background: var(--dark); color: white; padding: 15px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .header a { color: white; text-decoration: none; font-size: 14px; border: 1px solid #555; padding: 5px 10px; border-radius: 5px; background: #232f3e; }
 
+        /* محرك البحث */
+        .search-container { background: white; padding: 15px; position: sticky; top: 55px; z-index: 999; border-bottom: 3px solid var(--sports-blue); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .search-container input { width: 100%; padding: 12px; border-radius: 25px; border: 1px solid #ddd; font-family: 'Cairo'; outline: none; box-sizing: border-box; }
+
+        .container { padding: 15px; max-width: 500px; margin: auto; }
+        
+        /* تصميم الكروت */
+        .product-card { background: white; border-radius: 12px; margin-bottom: 25px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; transition: 0.3s; }
+        .product-card img { width: 100%; height: auto; display: block; }
+        .p-info { padding: 20px; text-align: center; }
+        .p-info h3 { font-size: 18px; margin-bottom: 15px; color: #111; font-weight: bold; }
+        
+        /* زر الشراء */
+        .buy-btn { display: block; background: var(--amazon); color: black; text-decoration: none; padding: 14px; border-radius: 8px; font-weight: bold; font-size: 16px; border: 1px solid #e2c017; }
+        
+        .highlight { border: 2px solid var(--sports-blue); transform: scale(1.02); }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <a href="amazon.html">⬅ عودة</a>
+    <strong>⚽ قسم الرياضة والرشاقة</strong>
+    <div style="width:40px;"></div>
+</div>
+
+<div class="search-container">
+    <input type="text" id="searchInput" onkeyup="smartSearch()" placeholder="ابحث عن (معدات، ملابس، مكملات)...">
+</div>
+
+<div class="container" id="productBox">
+    
+    <div class="product-card product-item">
+        <img src="https://via.placeholder.com/500x500?text=Gym+Equipment" alt="معدات">
+        <div class="p-info">
+            <h3>مجموعة حبال المقاومة للتمارين المنزلية المتكاملة</h3>
+            <a href="#" class="buy-btn">🛒 عرض السعر على أمازون</a>
+        </div>
+    </div>
+
+    <div class="product-card product-item">
+        <img src="https://via.placeholder.com/500x500?text=Water+Bottle" alt="مطارة">
+        <div class="p-info">
+            <h3>مطارة ماء رياضية بسعة كبيرة مع مؤقت تحفيزي</h3>
+            <a href="#" class="buy-btn">🛒 عرض السعر على أمازون</a>
+        </div>
+    </div>
+
+    <div class="product-card product-item">
+        <img src="https://via.placeholder.com/500x500?text=Yoga+Mat" alt="بساط">
+        <div class="p-info">
+            <h3>بساط يوغا وتمارين غير قابل للانزلاق عالي الجودة</h3>
+            <a href="#" class="buy-btn">🛒 عرض السعر على أمازون</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function smartSearch() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let items = document.querySelectorAll('.product-item');
+        let found = false;
+
+        items.forEach(item => {
+            let title = item.querySelector('h3').innerText.toLowerCase();
+            
+            if (title.includes(input)) {
+                item.style.display = "block";
+                if (!found && input.length > 1) {
+                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    item.classList.add('highlight');
+                    setTimeout(() => item.classList.remove('highlight'), 2000);
+                    found = true;
+                }
+            } else {
+                item.style.display = "none";
+            }
+        });
+
+        if (input === "") {
+            items.forEach(i => {
+                i.style.display = "block";
+                i.classList.remove('highlight');
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
