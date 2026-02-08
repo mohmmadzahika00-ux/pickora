@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أمازون | قسم الجمال والعناية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --amazon: #FF9900; --beauty-accent: #d4a373; --dark: #131921; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Cairo', sans-serif; background: #fdfaf9; margin: 0; padding: 0; }
+        
+        /* الهيدر */
+        .header { background: var(--dark); color: white; padding: 15px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .header a { color: white; text-decoration: none; font-size: 14px; border: 1px solid #555; padding: 5px 10px; border-radius: 5px; background: #232f3e; }
 
+        /* محرك البحث */
+        .search-container { background: white; padding: 15px; position: sticky; top: 55px; z-index: 999; border-bottom: 3px solid var(--beauty-accent); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .search-container input { width: 100%; padding: 12px; border-radius: 25px; border: 1px solid #eee; font-family: 'Cairo'; outline: none; box-sizing: border-box; background: #fafafa; }
+
+        .container { padding: 15px; max-width: 500px; margin: auto; }
+        
+        /* تصميم الكروت */
+        .product-card { background: white; border-radius: 20px; margin-bottom: 25px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; transition: 0.3s; }
+        .product-card img { width: 100%; height: auto; display: block; }
+        .p-info { padding: 20px; text-align: center; }
+        .p-info h3 { font-size: 18px; margin-bottom: 15px; color: #333; font-weight: 700; }
+        
+        /* زر الشراء */
+        .buy-btn { display: block; background: var(--amazon); color: black; text-decoration: none; padding: 14px; border-radius: 12px; font-weight: bold; font-size: 16px; transition: 0.2s; }
+        
+        .highlight { border: 2px solid var(--beauty-accent); transform: scale(1.03); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <a href="amazon.html">⬅ عودة</a>
+    <strong>💄 قسم الجمال والعناية</strong>
+    <div style="width:40px;"></div>
+</div>
+
+<div class="search-container">
+    <input type="text" id="searchInput" onkeyup="smartSearch()" placeholder="ابحث عن (سيروم، مصفف، كريم)...">
+</div>
+
+<div class="container" id="productBox">
+    
+    <div class="product-card product-item">
+        <img src="https://via.placeholder.com/500x500?text=Hair+Styler" alt="مصفف شعر">
+        <div class="p-info">
+            <h3>مصفف شعر احترافي 5 في 1 للتجفيف والتمليس</h3>
+            <a href="#" class="buy-btn">🛒 عرض على أمازون</a>
+        </div>
+    </div>
+
+    <div class="product-card product-item">
+        <img src="https://via.placeholder.com/500x500?text=Face+Serum" alt="سيروم">
+        <div class="p-info">
+            <h3>سيروم فيتامين C للنضارة ومكافحة التجاعيد</h3>
+            <a href="#" class="buy-btn">🛒 عرض على أمازون</a>
+        </div>
+    </div>
+
+    <div class="product-card product-item">
+        <img src="https://via.placeholder.com/500x500?text=Skin+Care+Tool" alt="جهاز تنظيف">
+        <div class="p-info">
+            <h3>جهاز تنظيف الوجه بالموجات فوق الصوتية</h3>
+            <a href="#" class="buy-btn">🛒 عرض على أمازون</a>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function smartSearch() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let items = document.querySelectorAll('.product-item');
+        let found = false;
+
+        items.forEach(item => {
+            let title = item.querySelector('h3').innerText.toLowerCase();
+            
+            if (title.includes(input)) {
+                item.style.display = "block";
+                if (!found && input.length > 1) {
+                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    item.classList.add('highlight');
+                    setTimeout(() => item.classList.remove('highlight'), 2000);
+                    found = true;
+                }
+            } else {
+                item.style.display = "none";
+            }
+        });
+
+        if (input === "") {
+            items.forEach(i => {
+                i.style.display = "block";
+                i.classList.remove('highlight');
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
