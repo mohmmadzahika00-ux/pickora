@@ -3,69 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أمازون | أدوات المنزل</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>قسم المنزل والمطبخ | بيكورا</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --amazon: #FF9900; --dark: #131921; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Cairo', sans-serif; background: #f6f6f6; margin: 0; padding: 0; }
-        .header { background: var(--dark); color: white; padding: 15px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-        .header a { color: white; text-decoration: none; font-size: 14px; border: 1px solid #555; padding: 5px 10px; border-radius: 5px; }
-        .search-container { background: white; padding: 15px; position: sticky; top: 55px; z-index: 999; border-bottom: 3px solid var(--amazon); }
-        .search-container input { width: 100%; padding: 12px; border-radius: 25px; border: 1px solid #ddd; font-family: 'Cairo'; outline: none; box-sizing: border-box; }
-        .container { padding: 15px; max-width: 500px; margin: auto; }
-        .product-card { background: white; border-radius: 15px; margin-bottom: 25px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid #eee; }
-        .product-card img { width: 100%; height: auto; display: block; }
-        .p-info { padding: 15px; text-align: center; }
-        .p-info h3 { font-size: 18px; margin-bottom: 15px; color: #111; }
-        .buy-btn { display: block; background: var(--amazon); color: black; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; }
-        .highlight { border: 2px solid var(--amazon); transform: scale(1.02); transition: 0.3s; }
+        :root { --amazon-orange: #FF9900; --sidebar-bg: #ffffff; --main-bg: #f4f7f9; }
+        body { font-family: 'Cairo', sans-serif; margin: 0; display: flex; background-color: var(--main-bg); scroll-behavior: smooth; }
+        
+        /* القائمة الجانبية */
+        .sidebar { width: 250px; background: var(--sidebar-bg); box-shadow: -2px 0 15px rgba(0,0,0,0.05); padding: 20px 10px; height: 100vh; position: sticky; top: 0; }
+        .sidebar h2 { font-size: 16px; color: var(--amazon-orange); border-right: 3px solid var(--amazon-orange); padding-right: 10px; margin-bottom: 20px; }
+        .sidebar-menu { list-style: none; padding: 0; }
+        .sidebar-menu a { display: flex; align-items: center; gap: 10px; padding: 12px; text-decoration: none; color: #555; font-weight: bold; border-radius: 10px; transition: 0.3s; margin-bottom: 8px; font-size: 14px; border: 1px solid #eee; }
+        .sidebar-menu a:hover { background: var(--amazon-orange); color: white; }
+
+        .main-content { flex: 1; display: flex; flex-direction: column; }
+        header { background: #232f3e; color: white; padding: 15px 30px; position: sticky; top: 0; z-index: 1000; }
+        
+        /* البحث */
+        .search-box { margin-top: 10px; position: relative; max-width: 500px; }
+        .search-box input { width: 100%; padding: 10px 40px 10px 15px; border-radius: 25px; border: none; outline: none; font-family: 'Cairo'; }
+        .search-box i { position: absolute; right: 15px; top: 12px; color: #888; }
+
+        .products-container { padding: 30px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        
+        /* كرت المنتج */
+        .product-card { background: white; border-radius: 15px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.4s; border: 2px solid transparent; text-align: center; }
+        .product-card img { width: 100%; height: 200px; object-fit: contain; border-radius: 10px; margin-bottom: 15px; }
+        .product-card h3 { font-size: 16px; margin: 10px 0; color: #333; }
+        .price { color: #B12704; font-size: 20px; font-weight: 900; margin-bottom: 15px; display: block; }
+        .buy-btn { background: var(--amazon-orange); color: white; text-decoration: none; padding: 10px; border-radius: 8px; display: block; font-weight: bold; transition: 0.3s; }
+        
+        .highlight { border-color: var(--amazon-orange); transform: scale(1.05); box-shadow: 0 10px 25px rgba(255,153,0,0.3); }
+
+        @media (max-width: 768px) { body { flex-direction: column; } .sidebar { width: 100%; height: auto; position: relative; } .sidebar-menu { display: flex; overflow-x: auto; gap: 10px; } }
     </style>
 </head>
 <body>
-<div class="header">
-    <a href="amazon.html">⬅ عودة</a>
-    <strong>🏠 قسم المنزل الذكي</strong>
-    <div style="width:40px;"></div>
-</div>
-<div class="search-container">
-    <input type="text" id="searchInput" onkeyup="smartSearch()" placeholder="ابحث عن منتج بالمنزل (مثلاً: منظم)...">
-</div>
-<div class="container" id="productBox">
-    <div class="product-card product-item">
-        <img src="https://via.placeholder.com/500x500?text=Smart+Organizer" alt="منظم مطبخ">
-        <div class="p-info">
-            <h3>منظم مطبخ دوار 360 درجة</h3>
-            <a href="#" class="buy-btn">🛒 اطلب من أمازون</a>
+
+    <aside class="sidebar">
+        <h2>أقسام أمازون</h2>
+        <ul class="sidebar-menu">
+            <li><a href="amazon-tech.html"><i class="fas fa-laptop"></i> الإلكترونيات</a></li>
+            <li><a href="amazon-home.html" style="background: #FF9900; color: white;"><i class="fas fa-home"></i> المنزل</a></li>
+            <li><a href="amazon-cars.html"><i class="fas fa-car"></i> السيارات</a></li>
+            <li><a href="amazon-beauty.html"><i class="fas fa-magic"></i> الجمال</a></li>
+            <li><a href="amazon-sports.html"><i class="fas fa-running"></i> الرياضة</a></li>
+        </ul>
+    </aside>
+
+    <div class="main-content">
+        <header>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h1 style="font-size: 18px; margin: 0;">بيكورا - قسم المنزل والمطبخ</h1>
+                <a href="amazon.html" style="color: white; text-decoration: none; font-size: 13px;">⬅ عودة</a>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchBar" placeholder="ابحث عن مكنسة، طاولة، إضاءة..." onkeyup="searchAndScroll()">
+            </div>
+        </header>
+
+        <div class="products-container" id="pList">
+            <div class="product-card" data-name="مكنسة كهربائية">
+                <img src="https://via.placeholder.com/200" alt="مكنسة">
+                <h3>مكنسة كهربائية ذكية</h3>
+                <span class="price">450 ريال</span>
+                <a href="#" class="buy-btn">شراء الآن</a>
+            </div>
+
+            <div class="product-card" data-name="قلاية هوائية">
+                <img src="https://via.placeholder.com/200" alt="قلاية">
+                <h3>قلاية هوائية بدون زيت</h3>
+                <span class="price">320 ريال</span>
+                <a href="#" class="buy-btn">شراء الآن</a>
+            </div>
+
+            <div class="product-card" data-name="طقم طاولات">
+                <img src="https://via.placeholder.com/200" alt="طاولة">
+                <h3>طقم طاولات خشبية عصري</h3>
+                <span class="price">890 ريال</span>
+                <a href="#" class="buy-btn">شراء الآن</a>
+            </div>
+
+            <div class="product-card" data-name="إضاءة ذكية">
+                <img src="https://via.placeholder.com/200" alt="إضاءة">
+                <h3>مصباح إضاءة ذكي للغرف</h3>
+                <span class="price">120 ريال</span>
+                <a href="#" class="buy-btn">شراء الآن</a>
+            </div>
         </div>
     </div>
-    <div class="product-card product-item">
-        <img src="https://via.placeholder.com/500x500?text=LED+Lamp" alt="إضاءة">
-        <div class="p-info">
-            <h3>إضاءة خزانة ذكية بمستشعر حركة</h3>
-            <a href="#" class="buy-btn">🛒 اطلب من أمازون</a>
-        </div>
-    </div>
-</div>
-<script>
-    function smartSearch() {
-        let input = document.getElementById('searchInput').value.toLowerCase();
-        let items = document.querySelectorAll('.product-item');
-        let found = false;
-        items.forEach(item => {
-            let title = item.querySelector('h3').innerText.toLowerCase();
-            if (title.includes(input)) {
-                item.style.display = "block";
-                if (!found && input.length > 1) {
-                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    item.classList.add('highlight');
-                    setTimeout(() => item.classList.remove('highlight'), 2000);
-                    found = true;
+
+    <script>
+        function searchAndScroll() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            let cards = document.getElementsByClassName('product-card');
+            
+            if (input.length < 2) {
+                for (let card of cards) card.classList.remove('highlight');
+                return;
+            }
+
+            for (let card of cards) {
+                let name = card.getAttribute('data-name').toLowerCase();
+                if (name.includes(input)) {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    card.classList.add('highlight');
+                    break;
+                } else {
+                    card.classList.remove('highlight');
                 }
-            } else { item.style.display = "none"; }
-        });
-        if (input === "") { items.forEach(i => i.style.display = "block"); }
-    }
-</script>
+            }
+        }
+    </script>
 </body>
 </html>
