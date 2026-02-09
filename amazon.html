@@ -3,73 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بيكورا | PICKORA</title>
+    <title>قسم أمازون | PICKORA</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Cairo', sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; text-align: center; }
-        header { background: #333; color: white; padding: 20px; font-size: 26px; font-weight: bold; border-bottom: 4px solid #FF9900; }
+        header { background: #FF9900; color: white; padding: 25px; font-size: 24px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .back-btn { display: inline-block; margin-top: 10px; color: white; text-decoration: none; font-size: 14px; border: 1px solid white; padding: 5px 15px; border-radius: 20px; }
+        
         .container { padding: 20px; max-width: 500px; margin: auto; }
         
-        /* كرت المتجر */
-        .card { background: white; border-radius: 12px; margin-bottom: 30px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 220px; object-fit: cover; display: block; }
-        .card-content { padding: 20px; }
-        .card-content h2 { margin: 0 0 15px; font-size: 22px; color: #333; }
+        /* تصميم كروت الأقسام داخل أمازون */
+        .category-card { background: white; border-radius: 12px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; align-items: center; text-align: right; }
+        .category-card img { width: 100px; height: 100px; object-fit: cover; }
+        .category-info { padding: 15px; flex: 1; }
+        .category-info h3 { margin: 0 0 10px; font-size: 18px; color: #333; }
         
-        /* الأزرار المشتركة */
-        .btn { display: block; padding: 14px; text-decoration: none; color: white; border-radius: 8px; font-weight: bold; font-size: 17px; transition: 0.3s; margin-bottom: 10px; }
+        .shop-btn { background: #333; color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; font-size: 14px; font-weight: bold; display: inline-block; }
         
-        /* ألوان الأزرار */
-        .btn-amazon { background-color: #FF9900; }
-        .btn-temu { background-color: #FF5500; }
-        .btn-shein { background-color: #000000; }
-        
-        /* زر تيك توك الخاص */
-        .btn-tiktok { 
-            background: linear-gradient(45deg, #69C9D0, #EE1D52, #000000); 
-            margin-top: 20px;
-            border: 2px solid #fff;
-        }
-
-        .btn:active { transform: scale(0.98); }
-        
-        .footer-text { font-size: 14px; color: #777; margin-top: 10px; }
+        .footer-text { font-size: 13px; color: #777; margin-top: 30px; padding-bottom: 20px; }
     </style>
 </head>
 <body>
 
-<header>PICKORA STORE</header>
+<header>
+    قسم عروض أمازون 📦
+    <br>
+    <a href="index.html" class="back-btn">⬅ العودة للرئيسية</a>
+</header>
 
 <div class="container">
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=800&q=80" alt="Amazon">
-        <div class="card-content">
-            <h2>متجر أمازون</h2>
-            <a href="amazon.html" class="btn btn-amazon">دخول القسم</a>
+    <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400" alt="Electronics">
+        <div class="category-info">
+            <h3>الإلكترونيات والذكاء الاصطناعي</h3>
+            <a href="https://www.amazon.com/electronics" class="shop-btn">تسوق الآن</a>
         </div>
     </div>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80" alt="Temu">
-        <div class="card-content">
-            <h2>متجر تيمو</h2>
-            <a href="temu.html" class="btn btn-temu">دخول القسم</a>
+    <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400" alt="Home">
+        <div class="category-info">
+            <h3>مستلزمات المنزل والمطبخ</h3>
+            <a href="https://www.amazon.com/home" class="shop-btn">تسوق الآن</a>
         </div>
     </div>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80" alt="Shein">
-        <div class="card-content">
-            <h2>متجر شي إن</h2>
-            <a href="shein.html" class="btn btn-shein">دخول القسم</a>
+    <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400" alt="Fashion">
+        <div class="category-info">
+            <h3>الملابس والإكسسوارات</h3>
+            <a href="https://www.amazon.com/fashion" class="shop-btn">تسوق الآن</a>
         </div>
     </div>
 
-    <hr style="border: 0; border-top: 1px solid #ddd; margin: 30px 0;">
-
-    <a href="https://www.tiktok.com/@YOUR_USERNAME" class="btn btn-tiktok">تابعنا على تيك توك 🔥</a>
-    <p class="footer-text">جميع الحقوق محفوظة لـ بيكورا 2026</p>
+    <p class="footer-text">نبحث لك عن أفضل الروابط لتوفير وقتك وجهدك</p>
 
 </div>
 
