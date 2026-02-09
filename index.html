@@ -16,23 +16,42 @@
         .card-content { padding: 20px; }
         .card-content h2 { margin: 0 0 15px; font-size: 22px; color: #333; }
         
-        /* الأزرار المشتركة */
-        .btn { display: block; padding: 14px; text-decoration: none; color: white; border-radius: 8px; font-weight: bold; font-size: 17px; transition: 0.3s; margin-bottom: 10px; }
-        
-        /* ألوان الأزرار */
+        /* الأزرار */
+        .btn { display: block; padding: 14px; text-decoration: none; color: white; border-radius: 8px; font-weight: bold; font-size: 17px; transition: 0.3s; }
         .btn-amazon { background-color: #FF9900; }
         .btn-temu { background-color: #FF5500; }
         .btn-shein { background-color: #000000; }
+        .btn:active { transform: scale(0.98); }
+
+        /* 🔥 زر التيك توك الطاير (Floating) 🔥 */
+        .tiktok-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; /* طاير في الزاوية اليسار */
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #000000, #EE1D52, #69C9D0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: 0.3s;
+            border: 2px solid white;
+        }
         
-        /* زر تيك توك الملون */
-        .btn-tiktok { 
-            background: linear-gradient(45deg, #000000 30%, #EE1D52 70%, #69C9D0 100%); 
-            margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(238, 29, 82, 0.3);
+        .tiktok-float:active { transform: scale(0.9); }
+        
+        /* شعار تيك توك بسيط داخل الدائرة */
+        .tiktok-icon {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
         }
 
-        .btn:active { transform: scale(0.98); }
-        .footer-text { font-size: 14px; color: #777; margin-top: 15px; padding-bottom: 30px; }
+        .footer-text { font-size: 14px; color: #777; margin-top: 20px; padding-bottom: 40px; }
     </style>
 </head>
 <body>
@@ -65,13 +84,13 @@
         </div>
     </div>
 
-    <div style="height: 10px;"></div>
-
-    <a href="https://www.tiktok.com/@YOUR_USERNAME" class="btn btn-tiktok">شاهد المنتجات على تيك توك 🔥</a>
-    
     <p class="footer-text">جميع الحقوق محفوظة لـ بيكورا 2026</p>
 
 </div>
+
+<a href="https://www.tiktok.com/@pickora2026?_r=1&_t=ZS-93hwutIwYL7" class="tiktok-float" target="_blank">
+    <span class="tiktok-icon">♪</span>
+</a>
 
 </body>
 </html>
