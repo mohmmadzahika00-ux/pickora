@@ -7,7 +7,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Cairo', sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; text-align: center; }
-        header { background: #333; color: white; padding: 20px; font-size: 26px; font-weight: bold; border-bottom: 4px solid #FF9900; }
+        
+        /* هيدر بيكورا الأصلي مع الإضافات */
+        header { 
+            background: #333; color: white; padding: 30px 20px; 
+            font-size: 26px; font-weight: bold; border-bottom: 4px solid #FF9900; 
+        }
+
+        /* قسم اللوغوهات الصغيرة تحت كلمة بيكورا */
+        .brand-logos {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .brand-logos span {
+            font-size: 14px;
+            background: rgba(255,255,255,0.1);
+            padding: 2px 10px;
+            border-radius: 5px;
+            font-weight: normal;
+        }
+
+        /* العبارة التسويقية */
+        .slogan {
+            font-size: 16px;
+            color: #FF9900;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
         .container { padding: 20px; max-width: 500px; margin: auto; }
         
         /* كرت المتجر */
@@ -23,11 +52,11 @@
         .btn-shein { background-color: #000000; }
         .btn:active { transform: scale(0.98); }
 
-        /* 🔥 زر التيك توك الطاير (Floating) 🔥 */
+        /* الزر الطاير (تيك توك) */
         .tiktok-float {
             position: fixed;
-            bottom: 20px;
-            left: 20px; /* طاير في الزاوية اليسار */
+            bottom: 25px;
+            left: 25px;
             width: 60px;
             height: 60px;
             background: linear-gradient(45deg, #000000, #EE1D52, #69C9D0);
@@ -38,25 +67,23 @@
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             z-index: 9999;
-            transition: 0.3s;
             border: 2px solid white;
         }
         
-        .tiktok-float:active { transform: scale(0.9); }
-        
-        /* شعار تيك توك بسيط داخل الدائرة */
-        .tiktok-icon {
-            color: white;
-            font-size: 30px;
-            font-weight: bold;
-        }
-
-        .footer-text { font-size: 14px; color: #777; margin-top: 20px; padding-bottom: 40px; }
+        .footer-text { font-size: 13px; color: #777; margin-top: 20px; padding-bottom: 40px; }
     </style>
 </head>
 <body>
 
-<header>PICKORA STORE</header>
+<header>
+    PICKORA STORE
+    <div class="brand-logos">
+        <span>Amazon</span>
+        <span>Temu</span>
+        <span>Shein</span>
+    </div>
+    <div class="slogan">نجمع لك أفضل ترندات العالم في مكان واحد!</div>
+</header>
 
 <div class="container">
 
@@ -89,7 +116,7 @@
 </div>
 
 <a href="https://www.tiktok.com/@pickora2026?_r=1&_t=ZS-93hwutIwYL7" class="tiktok-float" target="_blank">
-    <span class="tiktok-icon">♪</span>
+    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" width="30" alt="TikTok">
 </a>
 
 </body>
