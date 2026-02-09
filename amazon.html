@@ -9,61 +9,69 @@
     <style>
         :root { --amazon-orange: #FF9900; --sidebar-bg: #ffffff; --main-bg: #f4f7f9; --text-dark: #232f3e; }
         body { font-family: 'Cairo', sans-serif; margin: 0; display: flex; background-color: var(--main-bg); min-height: 100vh; }
-        .sidebar { width: 250px; background: var(--sidebar-bg); box-shadow: -2px 0 15px rgba(0,0,0,0.05); padding: 20px 10px; height: 100vh; position: sticky; top: 0; }
-        .sidebar h2 { font-size: 16px; color: var(--amazon-orange); border-right: 3px solid var(--amazon-orange); padding-right: 10px; }
-        .sidebar-menu { list-style: none; padding: 0; }
-        .sidebar-menu a { display: flex; align-items: center; gap: 10px; padding: 12px; text-decoration: none; color: #555; font-weight: bold; border-radius: 10px; transition: 0.3s; background: #fdfdfd; border: 1px solid #f0f0f0; margin-bottom: 8px; font-size: 14px; }
+        .sidebar { width: 250px; background: var(--sidebar-bg); box-shadow: -2px 0 15px rgba(0,0,0,0.05); padding: 20px 10px; height: 100vh; position: sticky; top: 0; z-index: 100; }
+        .sidebar h2 { font-size: 16px; color: var(--amazon-orange); margin-bottom: 25px; border-right: 3px solid var(--amazon-orange); padding-right: 10px; }
+        .sidebar-menu { list-style: none; padding: 0; margin: 0; }
+        .sidebar-menu li { margin-bottom: 8px; }
+        .sidebar-menu a { display: flex; align-items: center; gap: 10px; padding: 10px 15px; text-decoration: none; color: #555; font-weight: bold; border-radius: 10px; transition: 0.3s; background: #fdfdfd; border: 1px solid #f0f0f0; font-size: 14px; }
         .sidebar-menu a:hover { background: var(--amazon-orange); color: white; transform: translateX(-5px); }
         .main-wrapper { flex: 1; display: flex; flex-direction: column; }
         header { background: #232f3e; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .back-home { color: white; text-decoration: none; background: var(--amazon-orange); padding: 6px 15px; border-radius: 20px; font-size: 13px; font-weight: bold; }
         .content-area { padding: 25px; }
         .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-        .section-card { background: white; border-radius: 15px; display: flex; align-items: center; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.3s; text-decoration: none; color: inherit; border: 1px solid #eee; }
+        .section-card { background: white; border-radius: 15px; display: flex; align-items: center; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.3s; text-decoration: none; color: inherit; border: 1px solid #eee; }
         .section-card:hover { transform: translateY(-3px); border-color: var(--amazon-orange); }
-        .section-icon { width: 55px; height: 55px; background: #fff4e5; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-left: 15px; font-size: 24px; color: var(--amazon-orange); }
-        @media (max-width: 768px) { body { flex-direction: column; } .sidebar { width: 100%; height: auto; position: relative; } .sidebar-menu { display: flex; overflow-x: auto; gap: 10px; } }
+        .section-icon { width: 55px; height: 55px; background: #fff4e5; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-left: 15px; font-size: 24px; color: var(--amazon-orange); flex-shrink: 0; }
+        .section-text h3 { margin: 0; font-size: 16px; color: #333; }
+        .section-text p { margin: 3px 0 0; font-size: 12px; color: #777; }
+        @media (max-width: 768px) { body { flex-direction: column; } .sidebar { width: 100%; height: auto; position: relative; padding: 15px; } .sidebar-menu { display: flex; overflow-x: auto; gap: 10px; } }
     </style>
 </head>
 <body>
+
     <aside class="sidebar">
         <h2>تصفح الأقسام</h2>
         <ul class="sidebar-menu">
-            <li><a href="./electronics.html"><i class="fas fa-laptop"></i> إلكترونيات</a></li>
-            <li><a href="./home.html"><i class="fas fa-home"></i> المنزل</a></li>
-            <li><a href="./fashion.html"><i class="fas fa-tshirt"></i> الموضة</a></li>
-            <li><a href="./beauty.html"><i class="fas fa-magic"></i> الجمال</a></li>
-            <li><a href="./toys.html"><i class="fas fa-gamepad"></i> الألعاب</a></li>
+            <li><a href="amazon-tech.html"><i class="fas fa-laptop"></i> الإلكترونيات</a></li>
+            <li><a href="amazon-home.html"><i class="fas fa-home"></i> المنزل</a></li>
+            <li><a href="amazon-cars.html"><i class="fas fa-car"></i> السيارات</a></li>
+            <li><a href="amazon-beauty.html"><i class="fas fa-magic"></i> الجمال</a></li>
+            <li><a href="amazon-sports.html"><i class="fas fa-running"></i> الرياضة</a></li>
         </ul>
     </aside>
+
     <div class="main-wrapper">
         <header>
-            <h1>أقسام بيكورا - أمازون</h1>
-            <a href="index.html" style="color: white; text-decoration: none; background: var(--amazon-orange); padding: 6px 15px; border-radius: 20px; font-size: 13px;">⬅ الرئيسية</a>
+            <div class="header-title"><h1>أقسام بيكورا - أمازون</h1></div>
+            <a href="index.html" class="back-home">⬅ الرئيسية</a>
         </header>
+
         <div class="content-area">
             <div class="category-grid">
-                <a href="./electronics.html" class="section-card">
+                <a href="amazon-tech.html" class="section-card">
                     <div class="section-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <div class="section-text"><h3>الإلكترونيات</h3><p>أحدث الجوالات والساعات</p></div>
+                    <div class="section-text"><h3>الإلكترونيات</h3><p>تصفح أحدث الجوالات والساعات</p></div>
                 </a>
-                <a href="./home.html" class="section-card">
+                <a href="amazon-home.html" class="section-card">
                     <div class="section-icon"><i class="fas fa-couch"></i></div>
-                    <div class="section-text"><h3>المنزل</h3><p>أدوات منزلية عصرية</p></div>
+                    <div class="section-text"><h3>مستلزمات المنزل</h3><p>أدوات منزلية عصرية</p></div>
                 </a>
-                <a href="./fashion.html" class="section-card">
-                    <div class="section-icon"><i class="fas fa-shopping-bag"></i></div>
-                    <div class="section-text"><h3>الموضة</h3><p>ترندات الملابس</p></div>
+                <a href="amazon-cars.html" class="section-card">
+                    <div class="section-icon"><i class="fas fa-car-side"></i></div>
+                    <div class="section-text"><h3>إكسسوارات السيارات</h3><p>كل ما تحتاجه لسيارتك</p></div>
                 </a>
-                <a href="./beauty.html" class="section-card">
+                <a href="amazon-beauty.html" class="section-card">
                     <div class="section-icon"><i class="fas fa-sparkles"></i></div>
-                    <div class="section-text"><h3>الجمال</h3><p>منتجات العناية والمكياج</p></div>
+                    <div class="section-text"><h3>العناية والجمال</h3><p>أفضل منتجات العناية والمكياج</p></div>
                 </a>
-                <a href="./toys.html" class="section-card">
-                    <div class="section-icon"><i class="fas fa-puzzle-piece"></i></div>
-                    <div class="section-text"><h3>الألعاب</h3><p>عالم المرح</p></div>
+                <a href="amazon-sports.html" class="section-card">
+                    <div class="section-icon"><i class="fas fa-dumbbell"></i></div>
+                    <div class="section-text"><h3>الرياضة واللياقة</h3><p>أدوات رياضية مميزة</p></div>
                 </a>
             </div>
         </div>
     </div>
+
 </body>
 </html>
