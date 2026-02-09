@@ -3,97 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pickora | متجر تيمو</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>أقسام تيمو | بيكورا</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --temu: #ff5722; --bg: #f4f7f6; }
-        body { font-family: 'Cairo', sans-serif; background-color: var(--bg); margin: 0; padding: 0; }
+        :root { --temu-orange: #FF5500; --sidebar-bg: #ffffff; --main-bg: #fdf2ee; }
+        body { font-family: 'Cairo', sans-serif; margin: 0; display: flex; background-color: var(--main-bg); min-height: 100vh; }
         
-        /* الهيدر والقائمة الجانبية */
-        .top-nav { background: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .menu-btn { font-size: 24px; cursor: pointer; background: none; border: none; color: var(--temu); }
-        .back-link { text-decoration: none; color: #333; font-weight: bold; font-size: 14px; }
+        .sidebar { width: 260px; background: var(--sidebar-bg); box-shadow: -2px 0 15px rgba(0,0,0,0.05); padding: 25px 15px; height: 100vh; position: sticky; top: 0; z-index: 100; }
+        .sidebar h2 { font-size: 18px; color: var(--temu-orange); margin-bottom: 30px; border-right: 4px solid var(--temu-orange); padding-right: 10px; }
+        .sidebar-menu { list-style: none; padding: 0; }
+        .sidebar-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 15px; text-decoration: none; color: #555; font-weight: bold; border-radius: 12px; transition: 0.3s; margin-bottom: 10px; background: #fff; border: 1px solid #eee; }
+        .sidebar-menu a:hover { background: var(--temu-orange); color: white; transform: translateX(-5px); }
 
-        /* القائمة الجانبية المنسدلة */
-        .sidebar { height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; right: 0; background-color: #fff; overflow-x: hidden; transition: 0.5s; padding-top: 60px; box-shadow: -2px 0 10px rgba(0,0,0,0.2); }
-        .sidebar a { padding: 15px 25px; text-decoration: none; font-size: 18px; color: #333; display: block; transition: 0.3s; border-bottom: 1px solid #eee; }
-        .sidebar a:hover { background-color: var(--temu); color: white; }
-        .sidebar .closebtn { position: absolute; top: 0; left: 25px; font-size: 36px; margin-right: 50px; color: var(--temu); }
+        .main-wrapper { flex: 1; display: flex; flex-direction: column; }
+        header { background: #333; color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .back-home { color: white; text-decoration: none; background: var(--temu-orange); padding: 8px 18px; border-radius: 25px; font-weight: bold; }
 
-        /* الأقسام والمنتجات */
-        header { text-align: center; padding: 20px; background: white; margin-bottom: 10px; }
-        header h1 { color: var(--temu); margin: 0; font-size: 28px; }
+        .content-area { padding: 30px; }
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+        .section-card { background: white; border-radius: 20px; display: flex; align-items: center; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.03); transition: 0.3s; text-decoration: none; color: inherit; border: 1px solid #eee; }
+        .section-card:hover { transform: translateY(-5px); border-color: var(--temu-orange); }
+        .section-icon { width: 70px; height: 70px; background: #fff0eb; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-left: 20px; font-size: 30px; color: var(--temu-orange); }
         
-        .container { width: 95%; max-width: 500px; margin: auto; padding-bottom: 50px; }
-        .section-header { background: var(--temu); color: white; padding: 12px; border-radius: 10px; margin: 30px 0 15px; font-weight: bold; text-align: center; }
-        
-        .product-card { background: #fff; border-radius: 15px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.05); border: 1px solid #eee; }
-        .product-image { width: 100%; height: auto; display: block; }
-        .product-info { padding: 15px; text-align: center; }
-        .product-info h3 { margin: 0; font-size: 16px; color: #333; }
-        .buy-btn { display: block; padding: 15px; text-decoration: none; font-weight: bold; border-radius: 10px; margin: 10px 15px 15px; text-align: center; background: var(--temu); color: #fff; }
-
-        .overlay { display:none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 1500; cursor: pointer; }
+        @media (max-width: 768px) { body { flex-direction: column; } .sidebar { width: 100%; height: auto; position: relative; } .sidebar-menu { display: flex; overflow-x: auto; gap: 10px; } }
     </style>
 </head>
 <body>
-
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="#smart-home" onclick="closeNav()">🏠 المنزل الذكي</a>
-  <a href="#tech" onclick="closeNav()">💻 التقنية والاكسسوارات</a>
-  <a href="#beauty" onclick="closeNav()">💄 الجمال والعناية</a>
-  <a href="#sports" onclick="closeNav()">⚽ الرياضة والرشاقة</a>
-  <a href="#cars" onclick="closeNav()">🚗 السيارات والرحلات</a>
-</div>
-
-<div id="main">
-    <div class="top-nav">
-        <button class="menu-btn" onclick="openNav()">☰ الأقسام</button>
-        <a href="index.html" class="back-link">⬅ الرئيسية</a>
-    </div>
-
-    <header>
-        <h1>عروض تيمو المميزة</h1>
-        <p>اختر القسم المفضل لديك من القائمة</p>
-    </header>
-
-    <div class="container">
-        
-        <div id="smart-home" class="section-header">🏠 أدوات المنزل الذكي</div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/500x500?text=Smart+Home" class="product-image">
-            <div class="product-info"><h3>منظمات مطبخ ذكية</h3></div>
-            <a href="#" class="buy-btn">اطلب من تيمو</a>
+    <aside class="sidebar">
+        <h2>أقسام تيمو ✨</h2>
+        <ul class="sidebar-menu">
+            <li><a href="temu-electronics.html"><i class="fas fa-plug"></i> إلكترونيات تيمو</a></li>
+            <li><a href="temu-kitchen.html"><i class="fas fa-utensils"></i> أدوات المطبخ</a></li>
+            <li><a href="temu-organizers.html"><i class="fas fa-box-open"></i> المنظمات</a></li>
+            <li><a href="temu-accessories.html"><i class="fas fa-gem"></i> إكسسوارات</a></li>
+            <li><a href="temu-gadgets.html"><i class="fas fa-lightbulb"></i> اختراعات ذكية</a></li>
+        </ul>
+    </aside>
+    <div class="main-wrapper">
+        <header>
+            <h1>عروض تيمو - TEMU</h1>
+            <a href="index.html" class="back-home">⬅ الرئيسية</a>
+        </header>
+        <div class="content-area">
+            <div class="category-grid">
+                <a href="temu-electronics.html" class="section-card">
+                    <div class="section-icon"><i class="fas fa-battery-full"></i></div>
+                    <div class="section-text"><h3>إلكترونيات تيمو</h3><p>أقل الأسعار لأدواتك التقنية</p></div>
+                </a>
+                <a href="temu-kitchen.html" class="section-card">
+                    <div class="section-icon"><i class="fas fa-blender"></i></div>
+                    <div class="section-text"><h3>أدوات المطبخ</h3><p>سهلي حياتك بأدوات تيمو العجيبة</p></div>
+                </a>
+                <a href="temu-organizers.html" class="section-card">
+                    <div class="section-icon"><i class="fas fa-vial"></i></div>
+                    <div class="section-text"><h3>منظمات ذكية</h3><p>ترتيب البيت صار أسهل وأرخص</p></div>
+                </a>
+            </div>
         </div>
-
-        <div id="tech" class="section-header">💻 التقنية والاكسسوارات</div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/500x500?text=Tech" class="product-image">
-            <div class="product-info"><h3>ساعة ذكية Ultra ترند</h3></div>
-            <a href="#" class="buy-btn">اطلب من تيمو</a>
-        </div>
-
-        <div id="beauty" class="section-header">💄 الجمال والعناية</div>
-         <div id="sports" class="section-header">⚽ الرياضة والرشاقة</div>
-         <div id="cars" class="section-header">🚗 السيارات والرحلات</div>
-
     </div>
-</div>
-
-<div id="overlay" class="overlay" onclick="closeNav()"></div>
-
-<script>
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("overlay").style.display = "block";
-}
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("overlay").style.display = "none";
-}
-</script>
-
 </body>
 </html>
