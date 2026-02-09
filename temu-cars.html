@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كماليات السيارات | بيكورا تيمو</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --temu-orange: #fb7701; --bg: #f4f6f8; --card: #ffffff; }
+        body { font-family: 'Cairo', sans-serif; margin: 0; display: flex; background: var(--bg); scroll-behavior: smooth; }
+        
+        .sidebar { width: 260px; background: white; box-shadow: 2px 0 15px rgba(0,0,0,0.05); padding: 20px 10px; height: 100vh; position: sticky; top: 0; z-index: 10; }
+        .sidebar h2 { font-size: 18px; color: var(--temu-orange); border-right: 4px solid var(--temu-orange); padding-right: 10px; margin-bottom: 30px; }
+        .sidebar-menu { list-style: none; padding: 0; }
+        .sidebar-menu a { display: flex; align-items: center; gap: 12px; padding: 14px; text-decoration: none; color: #555; font-weight: 700; border-radius: 15px; transition: 0.3s; margin-bottom: 8px; font-size: 14px; border: 1px solid transparent; }
+        .sidebar-menu a:hover, .active-link { background: #fff5ed; color: var(--temu-orange) !important; border-color: #ffe0c9 !important; }
+
+        .main-content { flex: 1; min-width: 0; }
+        header { background: white; padding: 20px 40px; position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--temu-orange); display: flex; flex-direction: column; gap: 15px; }
+        .header-top { display: flex; justify-content: space-between; align-items: center; }
+        .header-top h1 { font-size: 22px; margin: 0; color: #222; font-weight: 900; }
+        
+        .search-box { position: relative; width: 100%; max-width: 600px; }
+        .search-box input { width: 100%; padding: 15px 50px 15px 20px; border-radius: 50px; border: 2px solid #eee; outline: none; font-family: 'Cairo'; font-size: 15px; transition: 0.3s; }
+        .search-box input:focus { border-color: var(--temu-orange); box-shadow: 0 0 15px rgba(251,119,1,0.15); }
+        .search-box i { position: absolute; right: 20px; top: 18px; color: #aaa; font-size: 18px; }
+
+        .products-grid { padding: 30px; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 25px; }
+        .product-card { background: white; border-radius: 25px; padding: 15px; transition: 0.4s; border: 2px solid transparent; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+        .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 20px; margin-bottom: 15px; background: #f9f9f9; }
+        .product-card h3 { font-size: 14px; color: #444; height: 40px; overflow: hidden; margin: 10px 0; line-height: 1.4; }
+        .price-box { margin-bottom: 15px; }
+        .current-price { color: #e41e31; font-size: 22px; font-weight: 900; }
+        .buy-btn { background: var(--temu-orange); color: white; text-decoration: none; padding: 12px; border-radius: 15px; display: block; font-weight: 800; font-size: 14px; transition: 0.3s; }
+        
+        .highlight { border-color: var(--temu-orange) !important; background: #fffdfb !important; }
+        @media (max-width: 768px) { body { flex-direction: column; } .sidebar { width: 100%; height: auto; position: relative; } .sidebar-menu { display: flex; overflow-x: auto; padding-bottom: 10px; } }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>أقسام تيمو</h2>
+        <ul class="sidebar-menu">
+            <li><a href="temu-home.html"><i class="fas fa-home"></i> المنزل والمطبخ</a></li>
+            <li><a href="temu-sports.html"><i class="fas fa-dumbbell"></i> التجهيزات الرياضية</a></li>
+            <li><a href="temu-tech.html"><i class="fas fa-gamepad"></i> كماليات الألعاب</a></li>
+            <li><a href="temu-fashion.html"><i class="fas fa-tshirt"></i> الأزياء والموضة</a></li>
+            <li><a href="temu-beauty.html"><i class="fas fa-magic"></i> مستحضرات التجميل</a></li>
+            <li><a href="temu-cars.html" class="active-link"><i class="fas fa-car"></i> كماليات السيارات</a></li>
+        </ul>
+    </aside>
+
+    <div class="main-content">
+        <header>
+            <div class="header-top">
+                <h1>كماليات وتجهيزات السيارات المتطورة</h1>
+                <a href="temu.html" style="color: var(--temu-orange); text-decoration: none; font-weight: 800;">العودة <i class="fas fa-chevron-left"></i></a>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchBar" placeholder="ابحث عن مظلات، شواحن، منظمات، أدوات تنظيف..." onkeyup="searchAndScroll()">
+            </div>
+        </header>
+
+        <div class="products-grid" id="pList">
+            <script>
+                const products = [
+                    { name: "مكنسة سيارة محمولة قوية", price: "45.00" },
+                    { name: "حامل جوال مغناطيسي للسيارة", price: "15.00" },
+                    { name: "مظلة زجاج السيارة القابلة للطي", price: "28.00" },
+                    { name: "شاحن سيارة سريع بمدخلين", price: "35.00" },
+                    { name: "منظم مقاعد خلفي للسيارة", price: "40.00" },
+                    { name: "جهاز مراقبة ضغط الإطارات", price: "95.00" },
+                    { name: "طقم إصلاح خدوش طلاء السيارة", price: "20.00" },
+                    { name: "إضاءة داخلية LED للسيارة (RGB)", price: "55.00" },
+                    { name: "معطر جو ذكي للسيارة", price: "18.00" },
+                    { name: "كاميرا داش كام بدقة عالية", price: "180.00" }
+                ];
+
+                products.forEach(p => {
+                    document.write(`
+                        <div class="product-card" data-name="${p.name}">
+                            <img src="https://via.placeholder.com/300?text=Temu+Cars" alt="Product">
+                            <h3>${p.name}</h3>
+                            <div class="price-box"><span class="current-price">${p.price} ريال</span></div>
+                            <a href="#" class="buy-btn" target="_blank">اطلبه الآن</a>
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+    </div>
+
+    <script>
+        function searchAndScroll() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            let cards = document.getElementsByClassName('product-card');
+            if (input.length < 2) { for (let card of cards) card.classList.remove('highlight'); return; }
+            for (let card of cards) {
+                let name = card.getAttribute('data-name').toLowerCase();
+                if (name.includes(input)) {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    card.classList.add('highlight');
+                    break;
+                } else { card.classList.remove('highlight'); }
+            }
+        }
+    </script>
+</body>
+</html>
