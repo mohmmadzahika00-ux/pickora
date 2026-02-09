@@ -10,23 +10,24 @@
         :root { --shein-black: #000000; --sidebar-bg: #ffffff; --main-bg: #f9f9f9; }
         body { font-family: 'Cairo', sans-serif; margin: 0; display: flex; background-color: var(--main-bg); min-height: 100vh; }
         
-        .sidebar { width: 260px; background: var(--sidebar-bg); box-shadow: -2px 0 15px rgba(0,0,0,0.05); padding: 25px 15px; height: 100vh; position: sticky; top: 0; z-index: 100; }
-        .sidebar h2 { font-size: 18px; color: var(--shein-black); margin-bottom: 30px; border-right: 4px solid var(--shein-black); padding-right: 10px; }
+        .sidebar { width: 260px; background: var(--sidebar-bg); box-shadow: -2px 0 15px rgba(0,0,0,0.05); padding: 20px 10px; height: 100vh; position: sticky; top: 0; z-index: 100; }
+        .sidebar h2 { font-size: 16px; color: var(--shein-black); margin-bottom: 20px; border-right: 3px solid var(--shein-black); padding-right: 10px; }
         .sidebar-menu { list-style: none; padding: 0; }
-        .sidebar-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 15px; text-decoration: none; color: #555; font-weight: bold; border-radius: 12px; transition: 0.3s; margin-bottom: 10px; background: #fff; border: 1px solid #eee; }
-        .sidebar-menu a:hover { background: var(--shein-black); color: white; transform: translateX(-5px); }
+        .sidebar-menu a { display: flex; align-items: center; gap: 8px; padding: 10px; text-decoration: none; color: #555; font-weight: bold; border-radius: 8px; transition: 0.2s; margin-bottom: 5px; background: #fff; border: 1px solid #eee; font-size: 14px; }
+        .sidebar-menu a:hover { background: var(--shein-black); color: white; transform: translateX(-3px); }
 
         .main-wrapper { flex: 1; display: flex; flex-direction: column; }
-        header { background: #000; color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
-        .back-home { color: white; text-decoration: none; border: 1px solid white; padding: 8px 18px; border-radius: 25px; font-weight: bold; }
+        header { background: #000; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .back-home { color: white; text-decoration: none; border: 1px solid white; padding: 6px 15px; border-radius: 20px; font-size: 13px; }
 
-        .content-area { padding: 30px; }
-        .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
-        .section-card { background: white; border-radius: 20px; display: flex; align-items: center; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.03); transition: 0.3s; text-decoration: none; color: inherit; border: 1px solid #eee; }
-        .section-card:hover { transform: translateY(-5px); border-color: var(--shein-black); }
-        .section-icon { width: 70px; height: 70px; background: #f0f0f0; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-left: 20px; font-size: 30px; color: var(--shein-black); }
+        .content-area { padding: 25px; }
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
         
-        @media (max-width: 768px) { body { flex-direction: column; } .sidebar { width: 100%; height: auto; position: relative; } .sidebar-menu { display: flex; overflow-x: auto; gap: 10px; } }
+        .section-card { background: white; border-radius: 15px; display: flex; align-items: center; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.3s; text-decoration: none; color: inherit; border: 1px solid #eee; }
+        .section-card:hover { transform: translateY(-3px); border-color: var(--shein-black); }
+        .section-icon { width: 50px; height: 50px; background: #f0f0f0; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-left: 15px; font-size: 22px; color: var(--shein-black); flex-shrink: 0; }
+        .section-text h3 { margin: 0; font-size: 16px; color: #333; }
+        .section-text p { margin: 3px 0 0; font-size: 12px; color: #777; }
     </style>
 </head>
 <body>
@@ -36,24 +37,36 @@
             <li><a href="shein-women.html"><i class="fas fa-female"></i> نسائي</a></li>
             <li><a href="shein-men.html"><i class="fas fa-male"></i> رجالي</a></li>
             <li><a href="shein-kids.html"><i class="fas fa-baby"></i> أطفال</a></li>
-            <li><a href="shein-home.html"><i class="fas fa-bed"></i> ديكور منزلي</a></li>
-            <li><a href="shein-shoes.html"><i class="fas fa-shoe-prints"></i> أحذية وحقائب</a></li>
+            <li><a href="shein-home.html"><i class="fas fa-bed"></i> ديكور</a></li>
+            <li><a href="shein-shoes.html"><i class="fas fa-shoe-prints"></i> أحذية</a></li>
         </ul>
     </aside>
     <div class="main-wrapper">
         <header>
-            <h1>أزياء شي إن - SHEIN</h1>
+            <h1 style="font-size: 20px;">أزياء شي إن - SHEIN</h1>
             <a href="index.html" class="back-home">⬅ الرئيسية</a>
         </header>
         <div class="content-area">
             <div class="category-grid">
                 <a href="shein-women.html" class="section-card">
                     <div class="section-icon"><i class="fas fa-crown"></i></div>
-                    <div class="section-text"><h3>القسم النسائي</h3><p>أرقى الفساتين والموديلات الجديدة</p></div>
+                    <div class="section-text"><h3>القسم النسائي</h3><p>أرقى الموديلات والفساتين</p></div>
+                </a>
+                <a href="shein-men.html" class="section-card">
+                    <div class="section-icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="section-text"><h3>القسم الرجالي</h3><p>أناقة عصرية لكل المناسبات</p></div>
+                </a>
+                <a href="shein-kids.html" class="section-card">
+                    <div class="section-icon"><i class="fas fa-child"></i></div>
+                    <div class="section-text"><h3>ملابس الأطفال</h3><p>تصاميم مريحة ولطيفة</p></div>
                 </a>
                 <a href="shein-home.html" class="section-card">
                     <div class="section-icon"><i class="fas fa-couch"></i></div>
-                    <div class="section-text"><h3>ديكور شي إن</h3><p>لمسات عصرية لمنزلك</p></div>
+                    <div class="section-text"><h3>ديكور شي إن</h3><p>لمسات فنية لمنزلك</p></div>
+                </a>
+                <a href="shein-shoes.html" class="section-card">
+                    <div class="section-icon"><i class="fas fa-shopping-bag"></i></div>
+                    <div class="section-text"><h3>أحذية وحقائب</h3><p>إكمال إطلالتك بأجمل الملحقات</p></div>
                 </a>
             </div>
         </div>
