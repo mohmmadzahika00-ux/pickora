@@ -3,77 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أقسام تيمو | بيكورا</title>
+    <title>بوابة تيمو العالمية | بيكورا</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --temu-orange: #FF5500; --sidebar-bg: #ffffff; --main-bg: #fdf2ee; }
-        body { font-family: 'Cairo', sans-serif; margin: 0; display: flex; background-color: var(--main-bg); min-height: 100vh; }
+        :root { --temu-orange: #fb7701; --dark-blue: #000b1a; --main-bg: #ffffff; }
+        body { font-family: 'Cairo', sans-serif; margin: 0; background-color: #fcfcfc; color: #333; }
         
-        /* القائمة الجانبية المعدلة */
-        .sidebar { width: 260px; background: var(--sidebar-bg); box-shadow: -2px 0 15px rgba(0,0,0,0.05); padding: 20px 10px; height: 100vh; position: sticky; top: 0; z-index: 100; }
-        .sidebar h2 { font-size: 16px; color: var(--temu-orange); margin-bottom: 20px; border-right: 3px solid var(--temu-orange); padding-right: 10px; }
-        .sidebar-menu { list-style: none; padding: 0; }
-        .sidebar-menu a { display: flex; align-items: center; gap: 8px; padding: 10px; text-decoration: none; color: #555; font-weight: bold; border-radius: 8px; transition: 0.2s; margin-bottom: 5px; background: #fff; border: 1px solid #eee; font-size: 14px; }
-        .sidebar-menu a:hover { background: var(--temu-orange); color: white; transform: translateX(-3px); }
+        /* الهيدر العلوي */
+        header { 
+            background: var(--temu-orange); 
+            color: white; 
+            padding: 40px 20px; 
+            text-align: center; 
+            border-bottom-left-radius: 50px; 
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 10px 30px rgba(251, 119, 1, 0.2);
+        }
+        header h1 { margin: 0; font-size: 28px; font-weight: 900; }
+        header p { margin: 10px 0 0; opacity: 0.9; font-size: 16px; }
 
-        .main-wrapper { flex: 1; display: flex; flex-direction: column; }
-        header { background: #333; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
-        .back-home { color: white; text-decoration: none; background: var(--temu-orange); padding: 6px 15px; border-radius: 20px; font-weight: bold; font-size: 13px; }
+        /* حاوية الأقسام */
+        .container { max-width: 1100px; margin: -30px auto 50px; padding: 0 20px; }
+        
+        .grid-sections { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 20px; 
+        }
 
-        .content-area { padding: 25px; }
-        .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        /* كرت القسم */
+        .section-card { 
+            background: white; 
+            border-radius: 20px; 
+            padding: 25px; 
+            display: flex; 
+            align-items: center; 
+            text-decoration: none; 
+            color: inherit; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+            transition: 0.4s; 
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-card:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--temu-orange); 
+            box-shadow: 0 15px 30px rgba(251, 119, 1, 0.15); 
+        }
         
-        /* مستطيلات الأقسام الخمسة */
-        .section-card { background: white; border-radius: 15px; display: flex; align-items: center; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.3s; text-decoration: none; color: inherit; border: 1px solid #eee; }
-        .section-card:hover { transform: translateY(-3px); border-color: var(--temu-orange); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-        .section-icon { width: 50px; height: 50px; background: #fff0eb; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-left: 15px; font-size: 22px; color: var(--temu-orange); flex-shrink: 0; }
-        .section-text h3 { margin: 0; font-size: 16px; color: #333; }
-        .section-text p { margin: 3px 0 0; font-size: 12px; color: #777; }
-        
-        @media (max-width: 768px) { body { flex-direction: column; } .sidebar { width: 100%; height: auto; position: relative; } .sidebar-menu { display: flex; overflow-x: auto; gap: 10px; } }
+        .icon-box { 
+            width: 70px; 
+            height: 70px; 
+            background: #fff5ed; 
+            border-radius: 15px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 30px; 
+            color: var(--temu-orange); 
+            margin-left: 20px; 
+            transition: 0.3s;
+        }
+        .section-card:hover .icon-box { background: var(--temu-orange); color: white; }
+
+        .text-box h3 { margin: 0; font-size: 17px; color: #222; font-weight: 800; }
+        .text-box p { margin: 5px 0 0; font-size: 13px; color: #777; line-height: 1.4; }
+
+        /* زر العودة للرئيسية */
+        .back-home {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 25px;
+            background: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .back-home:hover { background: var(--temu-orange); }
+
+        @media (max-width: 600px) {
+            .grid-sections { grid-template-columns: 1fr; }
+            header h1 { font-size: 22px; }
+        }
     </style>
 </head>
 <body>
-    <aside class="sidebar">
-        <h2>أقسام تيمو ✨</h2>
-        <ul class="sidebar-menu">
-            <li><a href="temu-electronics.html"><i class="fas fa-plug"></i> إلكترونيات</a></li>
-            <li><a href="temu-kitchen.html"><i class="fas fa-utensils"></i> مطبخ</a></li>
-            <li><a href="temu-organizers.html"><i class="fas fa-box-open"></i> منظمات</a></li>
-            <li><a href="temu-accessories.html"><i class="fas fa-gem"></i> إكسسوارات</a></li>
-            <li><a href="temu-gadgets.html"><i class="fas fa-lightbulb"></i> اختراعات</a></li>
-        </ul>
-    </aside>
-    <div class="main-wrapper">
-        <header>
-            <h1 style="font-size: 20px;">عروض تيمو - TEMU</h1>
-            <a href="index.html" class="back-home">⬅ الرئيسية</a>
-        </header>
-        <div class="content-area">
-            <div class="category-grid">
-                <a href="temu-electronics.html" class="section-card">
-                    <div class="section-icon"><i class="fas fa-battery-full"></i></div>
-                    <div class="section-text"><h3>إلكترونيات تيمو</h3><p>أدوات تقنية بأسعار منافسة</p></div>
-                </a>
-                <a href="temu-kitchen.html" class="section-card">
-                    <div class="section-icon"><i class="fas fa-blender"></i></div>
-                    <div class="section-text"><h3>أدوات المطبخ</h3><p>سهلي حياتك بأدوات عجيبة</p></div>
-                </a>
-                <a href="temu-organizers.html" class="section-card">
-                    <div class="section-icon"><i class="fas fa-vial"></i></div>
-                    <div class="section-text"><h3>منظمات ذكية</h3><p>ترتيب البيت بأقل التكاليف</p></div>
-                </a>
-                <a href="temu-accessories.html" class="section-card">
-                    <div class="section-icon"><i class="fas fa-ring"></i></div>
-                    <div class="section-text"><h3>إكسسوارات</h3><p>قطع مميزة لإكمال أناقتك</p></div>
-                </a>
-                <a href="temu-gadgets.html" class="section-card">
-                    <div class="section-icon"><i class="fas fa-robot"></i></div>
-                    <div class="section-text"><h3>اختراعات ذكية</h3><p>أدوات مبتكرة لن تجدها بغير تيمو</p></div>
-                </a>
-            </div>
+
+    <header>
+        <h1>بيكورا | عالم تيمو (Temu)</h1>
+        <p>تسوّق أحدث المنتجات العالمية بأفضل الأسعار الحصرية</p>
+    </header>
+
+    <div class="container">
+        <div class="grid-sections">
+            
+            <a href="temu-home.html" class="section-card">
+                <div class="icon-box"><i class="fas fa-home"></i></div>
+                <div class="text-box">
+                    <h3>عالم المنزل والمطبخ العصري</h3>
+                    <p>أدوات ذكية ومنظمات تجعل حياتك أسهل.</p>
+                </div>
+            </a>
+
+            <a href="temu-sports.html" class="section-card">
+                <div class="icon-box"><i class="fas fa-dumbbell"></i></div>
+                <div class="text-box">
+                    <h3>التجهيزات الرياضية واللياقة البدنية</h3>
+                    <p>كل ما تحتاجه لبناء جسم رياضي ومثالي.</p>
+                </div>
+            </a>
+
+            <a href="temu-tech.html" class="section-card">
+                <div class="icon-box"><i class="fas fa-gamepad"></i></div>
+                <div class="text-box">
+                    <h3>كماليات الألعاب الإلكترونية</h3>
+                    <p>أحدث ملحقات الجيمنج والقطع التقنية المتطورة.</p>
+                </div>
+            </a>
+
+            <a href="temu-fashion.html" class="section-card">
+                <div class="icon-box"><i class="fas fa-tshirt"></i></div>
+                <div class="text-box">
+                    <h3>الأزياء والموضة العالمية</h3>
+                    <p>إطلالات عصرية تناسب جميع الأذواق والمناسبات.</p>
+                </div>
+            </a>
+
+            <a href="temu-beauty.html" class="section-card">
+                <div class="icon-box"><i class="fas fa-magic"></i></div>
+                <div class="text-box">
+                    <h3>مستحضرات التجميل والعناية الفائقة</h3>
+                    <p>منتجات عناية وتجميل من أشهر الماركات.</p>
+                </div>
+            </a>
+
+            <a href="temu-cars.html" class="section-card">
+                <div class="icon-box"><i class="fas fa-car"></i></div>
+                <div class="text-box">
+                    <h3>كماليات وتجهيزات السيارات المتطورة</h3>
+                    <p>إكسسوارات تزيد من رفاهية وراحة قيادتك.</p>
+                </div>
+            </a>
+
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-right"></i> العودة للموقع الرئيسي</a>
         </div>
     </div>
+
 </body>
 </html>
