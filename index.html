@@ -1,77 +1,69 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pickora | بيكورا - عروض المتاجر العالمية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --amazon: #FFD814; --temu: #ff5722; --shein: #000000; }
-        body { font-family: 'Cairo', sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
-        
-        .tiktok-container { width: 100%; display: flex; justify-content: center; padding: 20px 0; background: #fff; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .tiktok-link { background: #000; color: white; text-decoration: none; padding: 12px 25px; border-radius: 10px; font-weight: bold; display: flex; align-items: center; gap: 10px; transition: 0.3s; border: 2px solid #000; }
-        
-        header { width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        header h1 { font-size: 42px; margin: 10px 0 5px; color: #1a1a1a; letter-spacing: 3px; }
-        header p { color: #666; margin-bottom: 20px; }
+<style>
+    /* تنسيق الكروت لتبدو احترافية مع الصور */
+    .store-card {
+        background: white;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        border: 1px solid #eee;
+        text-align: center;
+    }
+    .store-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .store-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover; /* لضمان عدم تمطط الصورة */
+    }
+    .store-info {
+        padding: 20px;
+    }
+    .store-info h2 {
+        margin: 0 0 10px;
+        font-size: 22px;
+        color: #333;
+    }
+    .go-btn {
+        display: inline-block;
+        padding: 10px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.2s;
+    }
+</style>
 
-        .container { width: 95%; max-width: 500px; }
-        .section-title { width: 100%; text-align: center; padding: 15px; background: #333; color: #fff; margin: 30px 0 15px; border-radius: 15px; font-weight: bold; font-size: 20px; box-sizing: border-box; }
-        
-        .product-card { background: #fff; border-radius: 20px; margin-bottom: 30px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 1px solid #ddd; }
-        .product-image { width: 100%; height: auto; display: block; background: #f9f9f9; }
-        .product-info { padding: 20px; text-align: center; }
-        .product-info h3 { margin: 0; font-size: 18px; color: #222; }
-        
-        .buy-btn { display: block; padding: 18px; text-decoration: none; font-weight: bold; border-radius: 15px; margin: 0 20px 20px; text-align: center; font-size: 17px; transition: 0.3s; }
-        .amazon-btn { background: var(--amazon); color: #000; border: 1px solid #e2c017; }
-        .temu-btn { background: var(--temu); color: #fff; }
-        .shein-btn { background: var(--shein); color: #fff; }
-        .buy-btn:hover { transform: scale(1.03); opacity: 0.9; }
-        
-        footer { padding: 40px; color: #888; text-align: center; font-size: 14px; width: 100%; }
-    </style>
-</head>
-<body>
+<div class="container">
 
-    <div class="tiktok-container">
-        <a href="https://www.tiktok.com/@pickora2026" class="tiktok-link" target="_blank">
-            <span>🎵 تابعنا على TikTok</span>
-        </a>
+    <div class="store-card">
+        <img src="https://images.unsplash.com/photo-1523474253046-2cd2c78b6ad1?w=800&q=80" alt="Amazon Store">
+        <div class="store-info">
+            <h2>متجر أمازون - Amazon</h2>
+            <p>أفضل العروض العالمية والجودة المضمونة</p>
+            <a href="amazon.html" class="go-btn" style="background: #FF9900; color: white;">دخول المتجر</a>
+        </div>
     </div>
 
-    <header>
-        <h1>PICKORA</h1>
-        <p>بوابتك لأفضل المنتجات العالمية ✨</p>
-    </header>
-
-    <div class="container">
-        
-        <div id="amazon" class="section-title">📦 متجر أمازون - Amazon</div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/500x500?text=Amazon+Store" class="product-image">
-            <div class="product-info"><h3>دليل منتجات أمازون المختارة</h3></div>
-            <a href="amazon.html" class="buy-btn amazon-btn">دخول قسم أمازون</a>
+    <div class="store-card">
+        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80" alt="Temu Store">
+        <div class="store-info">
+            <h2>متجر تيمو - Temu</h2>
+            <p>أحدث المنتجات بأسعار الجملة المذهلة</p>
+            <a href="temu.html" class="go-btn" style="background: #FF5500; color: white;">دخول المتجر</a>
         </div>
-        
-        <div id="temu" class="section-title">🧡 متجر تيمو - Temu</div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/500x500?text=Temu+Store" class="product-image">
-            <div class="product-info"><h3>عروض تيمو الحصرية</h3></div>
-            <a href="temu.html" class="buy-btn temu-btn">دخول قسم تيمو</a>
-        </div>
-
-        <div id="shein" class="section-title">🖤 متجر شي إن - Shein</div>
-        <div class="product-card">
-            <img src="https://via.placeholder.com/500x500?text=Shein+Store" class="product-image">
-            <div class="product-info"><h3>تشكيلة شي إن الجديدة</h3></div>
-            <a href="shein.html" class="buy-btn shein-btn">دخول قسم شي إن</a>
-        </div>
-
     </div>
 
-    <footer>&copy; 2026 Pickora Hub</footer>
+    <div class="store-card">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80" alt="Shein Store">
+        <div class="store-info">
+            <h2>متجر شي إن - SHEIN</h2>
+            <p>عالم الموضة والجمال في مكان واحد</p>
+            <a href="shein.html" class="go-btn" style="background: #000; color: white;">دخول المتجر</a>
+        </div>
+    </div>
 
-</body>
-</html>
+</div>
