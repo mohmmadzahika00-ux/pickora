@@ -3,52 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pickora Store</title>
+    <title>Pickora | متجرك المختار</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="top-header">
-        <h1>PICKORA STORE</h1>
-        <div class="top-buttons">
-            <span onclick="alert('قريباً')">Shein</span>
-            <span class="active">Temu</span>
-            <span onclick="alert('قريباً')">Amazon</span>
+    <header class="main-header">
+        <div class="logo-area">
+            <h1>Pickora<span>.</span></h1>
+            <p>أفضل الاختيارات من أشهر المنصات العالمية</p>
         </div>
-        <p class="promo-text">نجمع لك أفضل ترندات العالم في مكان واحد!</p>
-    </div>
+    </header>
 
-    <div class="container">
-        <div class="card">
-            <div class="card-image" style="background-color: #ff6600;">
-                <span class="sale-tag">SALE 50%</span>
+    <main class="container">
+        <a href="temu-beauty.html" class="store-card temu">
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <div class="badge">الأكثر طلباً 🔥</div>
+                <h2>متجر تيمو (Temu)</h2>
+                <p>عروض تبدأ من 5 ₪ وشحن سريع</p>
+                <span class="shop-now">تسوق الآن <i class="fas fa-arrow-left"></i></span>
             </div>
-            <div class="card-info">
-                <h2>متجر تيمو</h2>
-                <a href="temu-beauty.html" class="enter-btn">دخول القسم</a>
-            </div>
-        </div>
+        </a>
 
-        <div class="card" onclick="alert('سيتوفر قريباً جداً')">
-            <div class="card-image" style="background-color: #232f3e;">
-                <span class="sale-tag">SALE 50%</span>
-            </div>
-            <div class="card-info">
-                <h2>متجر أمازون</h2>
-                <button class="enter-btn">دخول القسم</button>
+        <div class="store-card shein disabled" onclick="alert('قسم شي إن سيتوفر خلال أيام قليلة!')">
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <h2>عروض شي إن (Shein)</h2>
+                <p>أحدث صيحات الموضة العالمية</p>
+                <span class="status">قريباً.. 🔒</span>
             </div>
         </div>
 
-        <div class="card" onclick="alert('سيتوفر قريباً جداً')">
-            <div class="card-image" style="background-color: #000000;">
-                <span class="sale-tag">SALE 50%</span>
-            </div>
-            <div class="card-info">
-                <h2>متجر شي إن</h2>
-                <button class="enter-btn">دخول القسم</button>
+        <div class="store-card amazon disabled" onclick="alert('نعمل حالياً على تجهيز أفضل عروض أمازون لك!')">
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <h2>متجر أمازون (Amazon)</h2>
+                <p>ماركات أصلية وضمان جودة</p>
+                <span class="status">قريباً.. 🔒</span>
             </div>
         </div>
-    </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Pickora Store - جميع الحقوق محفوظة</p>
+    </footer>
 
 </body>
 </html>
