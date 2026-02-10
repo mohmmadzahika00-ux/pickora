@@ -7,16 +7,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Pickora<span>.</span></h1>
-        <p>نختار لك بعناية أفضل المنتجات والخصومات</p>
-        
-        <div class="buttons">
-            <a href="temu-beauty.html" class="btn">عروض تيمو (Temu)</a>
 
-            <a href="#" class="btn" onclick="alert('قريباً جداً'); return false;">عروض شي إن (Shein)</a>
-            <a href="#" class="btn" onclick="alert('قريباً جداً'); return false;">عروض أمازون (Amazon)</a>
+    <nav class="side-menu">
+        <ul>
+            <li><a href="temu-beauty.html">تيمو</a></li>
+            <li onclick="alert('قريباً')">شي إن</li>
+            <li onclick="alert('قريباً')">أمازون</li>
+        </ul>
+    </nav>
+
+    <div class="main-wrapper">
+        <header class="header">
+            <h1 class="logo">Pickora<span>.</span></h1>
+            <p class="slogan">بوابتك لأقوى الصفقات والمنتجات المختارة</p>
+        </header>
+
+        <div class="buttons-container">
+            <a href="temu-beauty.html" class="box-link temu">
+                <span>عروض تيمو (Temu)</span>
+            </a>
+
+            <div class="box-link disabled" onclick="alert('هذا القسم سيتوفر قريباً')">
+                <span>عروض شي إن (Shein)</span>
+            </div>
+
+            <div class="box-link disabled" onclick="alert('هذا القسم سيتوفر قريباً')">
+                <span>عروض أمازون (Amazon)</span>
+            </div>
         </div>
     </div>
+
 </body>
 </html>
