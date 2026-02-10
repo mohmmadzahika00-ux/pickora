@@ -3,46 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pickora | صفقاتك المختارة</title>
+    <title>Pickora Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="top-bar">
-        <span>تيمو</span>
-        <span>شي إن</span>
-        <span>أمازون</span>
-    </nav>
+    <div class="top-header">
+        <h1>PICKORA STORE</h1>
+        <div class="top-buttons">
+            <span onclick="alert('قريباً')">Shein</span>
+            <span class="active">Temu</span>
+            <span onclick="alert('قريباً')">Amazon</span>
+        </div>
+        <p class="promo-text">نجمع لك أفضل ترندات العالم في مكان واحد!</p>
+    </div>
 
     <div class="container">
-        <div class="header">
-            <h1 class="logo">Pickora<span>.</span></h1>
-            <p class="tagline">بوابتك لأفضل المنتجات العالمية والخصومات الحصرية</p>
+        <div class="card">
+            <div class="card-image temu-bg">
+                <span class="sale-tag">SALE 50%</span>
+            </div>
+            <div class="card-info">
+                <h2>متجر تيمو</h2>
+                <a href="temu-beauty.html" class="enter-btn">دخول القسم</a>
+            </div>
         </div>
 
-        <div class="store-grid">
-            <a href="temu-beauty.html" class="store-card temu">
-                <img src="https://img.etimg.com/thumb/msid-100262102,width-1200,height-900,resizemode-4,imgsize-14574/temu.jpg" alt="Temu">
-                <div class="store-info">
-                    <h2>عروض تيمو (Temu)</h2>
-                    <span>تسوق الآن ←</span>
-                </div>
-            </a>
-
-            <div class="store-card shein disabled" onclick="alert('سيتوفر قريباً')">
-                <img src="https://logodownload.org/wp-content/uploads/2021/06/shein-logo.jpg" alt="Shein">
-                <div class="store-info">
-                    <h2>عروض شي إن (Shein)</h2>
-                    <span>قريباً 🔒</span>
-                </div>
+        <div class="card disabled" onclick="alert('سيتوفر قريباً جداً')">
+            <div class="card-image amazon-bg">
+                <span class="sale-tag">SALE 50%</span>
             </div>
+            <div class="card-info">
+                <h2>متجر أمازون</h2>
+                <button class="enter-btn">دخول القسم</button>
+            </div>
+        </div>
 
-            <div class="store-card amazon disabled" onclick="alert('سيتوفر قريباً')">
-                <img src="https://m.media-amazon.com/images/G/01/gc/pvp/amazon_logo_RGB._CB485935616_.jpg" alt="Amazon">
-                <div class="store-info">
-                    <h2>عروض أمازون (Amazon)</h2>
-                    <span>قريباً 🔒</span>
-                </div>
+        <div class="card disabled" onclick="alert('سيتوفر قريباً جداً')">
+            <div class="card-image shein-bg">
+                <span class="sale-tag">SALE 50%</span>
+            </div>
+            <div class="card-info">
+                <h2>متجر شي إن</h2>
+                <button class="enter-btn">دخول القسم</button>
             </div>
         </div>
     </div>
