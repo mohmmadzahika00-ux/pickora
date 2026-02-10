@@ -3,121 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بيكورا | PICKORA</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pickora - وجهتك لأفضل العروض</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; text-align: center; }
+        /* التنسيقات الأساسية لضمان ثبات التصميم */
+        body { background-color: #000; color: #fff; text-align: center; font-family: sans-serif; margin: 0; padding: 0; }
+        .container { padding: 50px 20px; }
+        .logo { font-size: 48px; font-weight: bold; margin-bottom: 10px; }
+        .logo span { color: #ff6600; }
+        .tagline { color: #888; font-size: 18px; margin-bottom: 40px; }
         
-        /* هيدر بيكورا الأصلي مع الإضافات */
-        header { 
-            background: #333; color: white; padding: 30px 20px; 
-            font-size: 26px; font-weight: bold; border-bottom: 4px solid #FF9900; 
+        .buttons { display: flex; flex-direction: column; gap: 20px; max-width: 300px; margin: 0 auto; }
+        .btn { 
+            padding: 15px 25px; 
+            border-radius: 10px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 18px; 
+            transition: 0.3s;
+            border: none;
         }
 
-        /* قسم اللوغوهات الصغيرة تحت كلمة بيكورا */
-        .brand-logos {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
-        }
-        .brand-logos span {
-            font-size: 14px;
-            background: rgba(255,255,255,0.1);
-            padding: 2px 10px;
-            border-radius: 5px;
-            font-weight: normal;
+        /* زر تيمو النشط */
+        .btn-temu {
+            background-color: #ff6600;
+            color: white;
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+            animation: pulse 2s infinite;
         }
 
-        /* العبارة التسويقية */
-        .slogan {
-            font-size: 16px;
-            color: #FF9900;
-            margin-top: 15px;
-            font-weight: bold;
+        /* الأزرار المقفلة */
+        .btn-disabled {
+            background-color: #1a1a1a;
+            color: #444;
+            border: 1px dashed #333;
+            cursor: not-allowed;
         }
 
-        .container { padding: 20px; max-width: 500px; margin: auto; }
-        
-        /* كرت المتجر */
-        .card { background: white; border-radius: 12px; margin-bottom: 30px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 220px; object-fit: cover; display: block; }
-        .card-content { padding: 20px; }
-        .card-content h2 { margin: 0 0 15px; font-size: 22px; color: #333; }
-        
-        /* الأزرار */
-        .btn { display: block; padding: 14px; text-decoration: none; color: white; border-radius: 8px; font-weight: bold; font-size: 17px; transition: 0.3s; }
-        .btn-amazon { background-color: #FF9900; }
-        .btn-temu { background-color: #FF5500; }
-        .btn-shein { background-color: #000000; }
-        .btn:active { transform: scale(0.98); }
-
-        /* الزر الطاير (تيك توك) */
-        .tiktok-float {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #000000, #EE1D52, #69C9D0);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 9999;
-            border: 2px solid white;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
         }
-        
-        .footer-text { font-size: 13px; color: #777; margin-top: 20px; padding-bottom: 40px; }
     </style>
 </head>
 <body>
 
-<header>
-    PICKORA STORE
-    <div class="brand-logos">
-        <span>Amazon</span>
-        <span>Temu</span>
-        <span>Shein</span>
-    </div>
-    <div class="slogan">نجمع لك أفضل ترندات العالم في مكان واحد!</div>
-</header>
+    <div class="container">
+        <div class="logo">Pickora<span>.</span></div>
+        <p class="tagline">نختار لك أفضل المنتجات بأقل الأسعار</p>
 
-<div class="container">
+        <div class="buttons">
+            <a href="temu-beauty.html" class="btn btn-temu">عروض Temu الحصرية 🧡</a>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=800&q=80" alt="Amazon">
-        <div class="card-content">
-            <h2>متجر أمازون</h2>
-            <a href="amazon.html" class="btn btn-amazon">دخول القسم</a>
+            <a href="#" class="btn btn-disabled" onclick="alert('هذا القسم قيد التجهيز حالياً.. انتظرونا قريباً!')">
+                عروض Shein (قريباً) 🔒
+            </a>
+            
+            <a href="#" class="btn btn-disabled" onclick="alert('هذا القسم قيد التجهيز حالياً.. انتظرونا قريباً!')">
+                عروض Amazon (قريباً) 🔒
+            </a>
         </div>
     </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80" alt="Temu">
-        <div class="card-content">
-            <h2>متجر تيمو</h2>
-            <a href="temu.html" class="btn btn-temu">دخول القسم</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80" alt="Shein">
-        <div class="card-content">
-            <h2>متجر شي إن</h2>
-            <a href="shein.html" class="btn btn-shein">دخول القسم</a>
-        </div>
-    </div>
-
-    <p class="footer-text">جميع الحقوق محفوظة لـ بيكورا 2026</p>
-
-</div>
-
-<a href="https://www.tiktok.com/@pickora2026?_r=1&_t=ZS-93hwutIwYL7" class="tiktok-float" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" width="30" alt="TikTok">
-</a>
 
 </body>
 </html>
