@@ -7,52 +7,53 @@
     <link rel="stylesheet" href="style.css">
     <style>
         :root { --temu-orange: #ff6600; }
-        .product-card { border: 1px solid #eee; border-radius: 15px; padding: 20px; text-align: center; background: white; transition: 0.3s; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        body { background-color: #000; color: #fff; margin: 0; font-family: sans-serif; }
+        .product-card { border: 1px solid #333; border-radius: 15px; padding: 20px; text-align: center; background: #111; transition: 0.3s; margin: 20px auto; max-width: 350px; }
         .buy-btn { background: var(--temu-orange); color: white; text-decoration: none; padding: 12px 20px; border-radius: 50px; display: block; font-weight: bold; margin-top: 15px; }
         .price-new { color: var(--temu-orange); font-size: 24px; font-weight: bold; }
         .price-old { text-decoration: line-through; color: #888; font-size: 16px; margin-left: 10px; }
         .badge { background: var(--temu-orange); color: white; padding: 4px 12px; border-radius: 5px; font-size: 12px; display: inline-block; margin-bottom: 10px; }
+        img { width: 100%; border-radius: 10px; height: auto; display: block; }
+        header { padding: 20px; border-bottom: 1px solid #333; }
+        .logo { font-size: 24px; font-weight: bold; color: #fff; }
+        .logo span { color: var(--temu-orange); }
     </style>
 </head>
 <body>
 
     <header>
-        <nav>
+        <nav style="display: flex; justify-content: space-between; align-items: center;">
             <div class="logo">Pickora<span>.</span></div>
-            <a href="index.html" class="back-btn">الرئيسية</a>
+            <a href="index.html" style="color: #fff; text-decoration: none; border: 1px solid #fff; padding: 5px 15px; border-radius: 5px;">الرئيسية</a>
         </nav>
     </header>
 
-    <section class="page-title">
-        <h1>أفضل عروض العناية من Temu 🧡</h1>
-        <p>اكتشف صفقات حصرية بأسعار لا تقبل المنافسة</p>
+    <section style="text-align: center; padding: 40px 20px;">
+        <h1 style="color: var(--temu-orange);">أفضل عروض العناية من Temu 🧡</h1>
+        <p>صفقات حقيقية وعمولات مضمونة</p>
     </section>
 
     <div class="container">
-        <div class="products-grid">
+        <div class="product-card">
+            <div class="badge">الأكثر مبيعاً 🔥</div>
             
-            <div class="product-card">
-                <div class="badge">الأكثر مبيعاً 🔥</div>
-                <img src="https://aimg.kwcdn.com/product/open/2024-03-25/1711355444365-22444d36e2f1469796e95c1a7a1b3a4a-goods.jpg" alt="ماكينة حلاقة" style="width: 100%; border-radius: 10px;">
-                
-                <h3>ماكينة حلاقة Miguan الاحترافية 3 في 1</h3>
-                <p style="color: #666; font-size: 14px;">دقة عالية، مناسبة للحلاقة وتحديد اللحية</p>
-                
-                <div class="price-container">
-                    <span class="price-old">120.00 ₪</span>
-                    <span class="price-new">6.52 ₪</span>
-                </div>
-
-                <a href="https://temu.to/k/ed4v3i0iuji" target="_blank" class="buy-btn">اطلبه الآن من Temu</a>
-                
-                <p style="font-size: 11px; color: #999; margin-top: 10px;">* السعر للمستخدمين الجدد على تطبيق تيمو</p>
+            <img src="IMG_1516.jpeg" alt="ماكينة حلاقة تيمو">
+            
+            <h3 style="margin-top: 15px;">ماكينة حلاقة Miguan الاحترافية</h3>
+            <p style="color: #bbb; font-size: 14px;">3 في 1 - دقة مثالية للحلاقة والتحديد</p>
+            
+            <div class="price-container">
+                <span class="price-old">120.00 ₪</span>
+                <span class="price-new">6.52 ₪</span>
             </div>
 
-            </div>
+            <a href="https://temu.to/k/ed4v3i0iuji" target="_blank" class="buy-btn">اطلبه الآن من Temu</a>
+            
+            <p style="font-size: 11px; color: #666; margin-top: 12px;">* العرض مخصص لمستخدمي التطبيق الجدد</p>
+        </div>
     </div>
 
-    <footer>
+    <footer style="text-align: center; padding: 40px; color: #444; font-size: 12px;">
         <p>&copy; 2026 Pickora - جميع الحقوق محفوظة</p>
     </footer>
 
