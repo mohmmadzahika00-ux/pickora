@@ -8,21 +8,42 @@
 </head>
 <body>
 
-    <div class="top-nav">
-        <span>تيمو</span>
-        <span>شي إن</span>
-        <span>أمازون</span>
+    <div class="side-nav">
+        <a href="temu-beauty.html">تيمو</a>
+        <a href="#" onclick="alert('قريباً')">شي إن</a>
+        <a href="#" onclick="alert('قريباً')">أمازون</a>
     </div>
 
     <div class="container">
-        <h1 class="logo">Pickora<span>.</span></h1>
-        <p class="slogan">نختار لك بعناية أفضل المنتجات والخصومات</p>
+        <div class="header-section">
+            <h1 class="logo">Pickora<span>.</span></h1>
+            <p class="slogan">بوابتك لأفضل المنتجات العالمية والخصومات الحصرية</p>
+        </div>
         
-        <div class="buttons">
-            <a href="temu-beauty.html" class="btn">عروض تيمو (Temu)</a>
+        <div class="buttons-list">
+            <a href="temu-beauty.html" class="main-card temu">
+                <div class="card-content">
+                    <h2>عروض تيمو (Temu)</h2>
+                    <p>أقوى الخصومات التي تصل إلى 90%</p>
+                </div>
+                <div class="arrow">←</div>
+            </a>
 
-            <a href="javascript:void(0)" class="btn disabled" onclick="alert('قريباً جداً')">عروض شي إن (Shein)</a>
-            <a href="javascript:void(0)" class="btn disabled" onclick="alert('قريباً جداً')">عروض أمازون (Amazon)</a>
+            <div class="main-card disabled" onclick="alert('سيتوفر قريباً جداً')">
+                <div class="card-content">
+                    <h2>عروض شي إن (Shein)</h2>
+                    <p>قريباً.. أفضل أزياء الموضة</p>
+                </div>
+                <div class="lock">🔒</div>
+            </div>
+
+            <div class="main-card disabled" onclick="alert('سيتوفر قريباً جداً')">
+                <div class="card-content">
+                    <h2>عروض أمازون (Amazon)</h2>
+                    <p>قريباً.. ماركات عالمية بأسعار منافسة</p>
+                </div>
+                <div class="lock">🔒</div>
+            </div>
         </div>
     </div>
 
