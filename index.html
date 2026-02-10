@@ -3,46 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pickora</title>
+    <title>Pickora | صفقاتك المختارة</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="side-nav">
-        <a href="temu-beauty.html">تيمو</a>
-        <a href="#" onclick="alert('قريباً')">شي إن</a>
-        <a href="#" onclick="alert('قريباً')">أمازون</a>
-    </div>
+    <nav class="top-bar">
+        <span>تيمو</span>
+        <span>شي إن</span>
+        <span>أمازون</span>
+    </nav>
 
     <div class="container">
-        <div class="header-section">
+        <div class="header">
             <h1 class="logo">Pickora<span>.</span></h1>
-            <p class="slogan">بوابتك لأفضل المنتجات العالمية والخصومات الحصرية</p>
+            <p class="tagline">بوابتك لأفضل المنتجات العالمية والخصومات الحصرية</p>
         </div>
-        
-        <div class="buttons-list">
-            <a href="temu-beauty.html" class="main-card temu">
-                <div class="card-content">
+
+        <div class="store-grid">
+            <a href="temu-beauty.html" class="store-card temu">
+                <img src="https://img.etimg.com/thumb/msid-100262102,width-1200,height-900,resizemode-4,imgsize-14574/temu.jpg" alt="Temu">
+                <div class="store-info">
                     <h2>عروض تيمو (Temu)</h2>
-                    <p>أقوى الخصومات التي تصل إلى 90%</p>
+                    <span>تسوق الآن ←</span>
                 </div>
-                <div class="arrow">←</div>
             </a>
 
-            <div class="main-card disabled" onclick="alert('سيتوفر قريباً جداً')">
-                <div class="card-content">
+            <div class="store-card shein disabled" onclick="alert('سيتوفر قريباً')">
+                <img src="https://logodownload.org/wp-content/uploads/2021/06/shein-logo.jpg" alt="Shein">
+                <div class="store-info">
                     <h2>عروض شي إن (Shein)</h2>
-                    <p>قريباً.. أفضل أزياء الموضة</p>
+                    <span>قريباً 🔒</span>
                 </div>
-                <div class="lock">🔒</div>
             </div>
 
-            <div class="main-card disabled" onclick="alert('سيتوفر قريباً جداً')">
-                <div class="card-content">
+            <div class="store-card amazon disabled" onclick="alert('سيتوفر قريباً')">
+                <img src="https://m.media-amazon.com/images/G/01/gc/pvp/amazon_logo_RGB._CB485935616_.jpg" alt="Amazon">
+                <div class="store-info">
                     <h2>عروض أمازون (Amazon)</h2>
-                    <p>قريباً.. ماركات عالمية بأسعار منافسة</p>
+                    <span>قريباً 🔒</span>
                 </div>
-                <div class="lock">🔒</div>
             </div>
         </div>
     </div>
