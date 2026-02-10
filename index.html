@@ -3,68 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pickora - وجهتك لأفضل العروض</title>
+    <title>Pickora</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* التنسيقات الأساسية لضمان ثبات التصميم */
-        body { background-color: #000; color: #fff; text-align: center; font-family: sans-serif; margin: 0; padding: 0; }
-        .container { padding: 50px 20px; }
-        .logo { font-size: 48px; font-weight: bold; margin-bottom: 10px; }
-        .logo span { color: #ff6600; }
-        .tagline { color: #888; font-size: 18px; margin-bottom: 40px; }
-        
-        .buttons { display: flex; flex-direction: column; gap: 20px; max-width: 300px; margin: 0 auto; }
-        .btn { 
-            padding: 15px 25px; 
-            border-radius: 10px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 18px; 
-            transition: 0.3s;
-            border: none;
-        }
-
-        /* زر تيمو النشط */
-        .btn-temu {
-            background-color: #ff6600;
-            color: white;
-            box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
-            animation: pulse 2s infinite;
-        }
-
-        /* الأزرار المقفلة */
-        .btn-disabled {
-            background-color: #1a1a1a;
-            color: #444;
-            border: 1px dashed #333;
-            cursor: not-allowed;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-    </style>
 </head>
 <body>
-
     <div class="container">
-        <div class="logo">Pickora<span>.</span></div>
-        <p class="tagline">نختار لك أفضل المنتجات بأقل الأسعار</p>
-
+        <h1>Pickora<span>.</span></h1>
+        <p>نختار لك بعناية أفضل المنتجات والخصومات</p>
+        
         <div class="buttons">
-            <a href="temu-beauty.html" class="btn btn-temu">عروض Temu الحصرية 🧡</a>
+            <a href="temu-beauty.html" class="btn">عروض تيمو (Temu)</a>
 
-            <a href="#" class="btn btn-disabled" onclick="alert('هذا القسم قيد التجهيز حالياً.. انتظرونا قريباً!')">
-                عروض Shein (قريباً) 🔒
+            <a href="javascript:void(0)" class="btn" style="opacity: 0.5; cursor: not-allowed; background-color: #ccc; color: #666;" onclick="alert('قريباً جداً!')">
+                عروض شي إن (Shein) 🔒
             </a>
-            
-            <a href="#" class="btn btn-disabled" onclick="alert('هذا القسم قيد التجهيز حالياً.. انتظرونا قريباً!')">
-                عروض Amazon (قريباً) 🔒
+
+            <a href="javascript:void(0)" class="btn" style="opacity: 0.5; cursor: not-allowed; background-color: #ccc; color: #666;" onclick="alert('قريباً جداً!')">
+                عروض أمازون (Amazon) 🔒
             </a>
         </div>
     </div>
-
 </body>
 </html>
