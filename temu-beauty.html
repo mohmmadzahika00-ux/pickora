@@ -3,20 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pickora - عروض تيمو للجمال</title>
+    <title>Pickora - عروض تيمو العالمية</title>
     <link rel="stylesheet" href="style.css">
     <style>
         :root { --temu-orange: #ff6600; }
-        body { background-color: #000; color: #fff; margin: 0; font-family: sans-serif; }
-        .product-card { border: 1px solid #333; border-radius: 15px; padding: 20px; text-align: center; background: #111; transition: 0.3s; margin: 20px auto; max-width: 350px; }
-        .buy-btn { background: var(--temu-orange); color: white; text-decoration: none; padding: 12px 20px; border-radius: 50px; display: block; font-weight: bold; margin-top: 15px; }
-        .price-new { color: var(--temu-orange); font-size: 24px; font-weight: bold; }
-        .price-old { text-decoration: line-through; color: #888; font-size: 16px; margin-left: 10px; }
-        .badge { background: var(--temu-orange); color: white; padding: 4px 12px; border-radius: 5px; font-size: 12px; display: inline-block; margin-bottom: 10px; }
-        img { width: 100%; border-radius: 10px; height: auto; display: block; }
-        header { padding: 20px; border-bottom: 1px solid #333; }
-        .logo { font-size: 24px; font-weight: bold; color: #fff; }
+        body { background-color: #000; color: #fff; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        header { padding: 20px; border-bottom: 1px solid #333; background: #000; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 24px; font-weight: bold; }
         .logo span { color: var(--temu-orange); }
+        .container { padding: 20px; display: flex; justify-content: center; }
+        
+        .product-card { 
+            border: 1px solid #333; 
+            border-radius: 20px; 
+            padding: 20px; 
+            text-align: center; 
+            background: #111; 
+            max-width: 380px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .badge { 
+            background: var(--temu-orange); 
+            color: white; 
+            padding: 5px 15px; 
+            border-radius: 50px; 
+            font-size: 12px; 
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        img { width: 100%; border-radius: 15px; margin-bottom: 15px; }
+
+        h3 { font-size: 20px; margin: 10px 0; color: #fff; }
+        .description { color: #aaa; font-size: 14px; margin-bottom: 20px; }
+
+        .price-box { margin-bottom: 20px; }
+        .price-main { color: var(--temu-orange); font-size: 28px; font-weight: bold; display: block; }
+        .price-sub { color: #888; font-size: 14px; display: block; margin-top: 5px; }
+
+        .buy-btn { 
+            background: var(--temu-orange); 
+            color: white; 
+            text-decoration: none; 
+            padding: 15px; 
+            border-radius: 10px; 
+            display: block; 
+            font-weight: bold; 
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .buy-btn:hover { background: #e65c00; transform: scale(1.02); }
+
+        .global-note { 
+            font-size: 11px; 
+            color: #666; 
+            margin-top: 15px; 
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
@@ -24,37 +69,42 @@
     <header>
         <nav style="display: flex; justify-content: space-between; align-items: center;">
             <div class="logo">Pickora<span>.</span></div>
-            <a href="index.html" style="color: #fff; text-decoration: none; border: 1px solid #fff; padding: 5px 15px; border-radius: 5px;">الرئيسية</a>
+            <a href="index.html" style="color: #fff; text-decoration: none; border: 1px solid #333; padding: 8px 20px; border-radius: 50px; font-size: 14px;">الرئيسية</a>
         </nav>
     </header>
 
     <section style="text-align: center; padding: 40px 20px;">
-        <h1 style="color: var(--temu-orange);">أفضل عروض العناية من Temu 🧡</h1>
-        <p>صفقات حقيقية وعمولات مضمونة</p>
+        <h2 style="font-size: 28px;">أفضل العروض المختارة ⚡</h2>
+        <p style="color: #888;">يتم تحديث الأسعار تلقائياً حسب بلدك</p>
     </section>
 
     <div class="container">
         <div class="product-card">
-            <div class="badge">الأكثر مبيعاً 🔥</div>
+            <div class="badge">خصم 90% لمستخدمي التطبيق الجدد 🎁</div>
             
-            <img src="IMG_1516.jpeg" alt="ماكينة حلاقة تيمو">
+            <img src="IMG_1516.jpeg" alt="Professional Shaver">
             
-            <h3 style="margin-top: 15px;">ماكينة حلاقة Miguan الاحترافية</h3>
-            <p style="color: #bbb; font-size: 14px;">3 في 1 - دقة مثالية للحلاقة والتحديد</p>
+            <h3>ماكينة حلاقة Miguan الاحترافية</h3>
+            <p class="description">أداء عالي، 3 رؤوس مختلفة، مناسبة للسفر والاستخدام اليومي.</p>
             
-            <div class="price-container">
-                <span class="price-old">120.00 ₪</span>
-                <span class="price-new">6.52 ₪</span>
+            <div class="price-box">
+                <span class="price-main">≈ $1.75*</span>
+                <span class="price-sub">ما يعادل تقريباً: 6.52 ₪</span>
             </div>
 
-            <a href="https://temu.to/k/ed4v3i0iuji" target="_blank" class="buy-btn">اطلبه الآن من Temu</a>
+            <a href="https://temu.to/k/ed4v3i0iuji" target="_blank" class="buy-btn">
+                اطلبها الآن بعُملة بلدك
+            </a>
             
-            <p style="font-size: 11px; color: #666; margin-top: 12px;">* العرض مخصص لمستخدمي التطبيق الجدد</p>
+            <div class="global-note">
+                * السعر يظهر بدقة عند الانتقال للمتجر حسب دولة الزبون.<br>
+                * العرض مخصص للتحميل الأول لتطبيق Temu.
+            </div>
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 40px; color: #444; font-size: 12px;">
-        <p>&copy; 2026 Pickora - جميع الحقوق محفوظة</p>
+    <footer style="text-align: center; padding: 50px; color: #333; font-size: 12px;">
+        <p>&copy; 2026 Pickora Global - جميع الحقوق محفوظة</p>
     </footer>
 
 </body>
