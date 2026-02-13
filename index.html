@@ -4,63 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pickora Store</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #ff6600; --bg: #f8f9fb; --white: #ffffff; --text: #333; --light-text: #888; }
+        body { margin: 0; padding: 0; background-color: var(--bg); font-family: 'Segoe UI', Tahoma, sans-serif; color: var(--text); overflow-x: hidden; direction: rtl; }
+        
+        /* الهيدر الثابت */
+        .app-bar { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.03); height: 60px; }
+        .menu-icon { display: flex; flex-direction: column; gap: 4px; cursor: pointer; width: 30px; }
+        .menu-icon span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+        .logo { font-size: 24px; font-weight: 900; position: absolute; left: 50%; transform: translateX(-50%); }
+        .logo span { color: var(--primary); }
+
+        /* الواجهة الرئيسية */
+        #home-page { display: block; padding: 20px; padding-bottom: 90px; }
+        .welcome { margin-bottom: 25px; }
+        .welcome h2 { margin: 0; font-size: 24px; }
+        .welcome p { color: var(--light-text); font-size: 14px; margin: 5px 0; }
+        .main-card { height: 160px; border-radius: 25px; position: relative; text-decoration: none; display: flex; align-items: center; padding: 0 25px; overflow: hidden; background-size: cover; margin-bottom: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); color: white; transition: 0.3s; }
+        .temu-card { background-image: linear-gradient(to left, rgba(255,102,0,0.8), transparent), url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=500'); }
+        .shein-card { background-image: linear-gradient(to left, rgba(0,0,0,0.7), transparent), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500'); filter: grayscale(1); opacity: 0.7; cursor: not-allowed; }
+        .amazon-card { background-image: linear-gradient(to left, rgba(35,47,62,0.8), transparent), url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500'); filter: grayscale(1); opacity: 0.7; cursor: not-allowed; }
+        .card-text h3 { margin: 0; font-size: 20px; }
+        .enter-btn { background: #fff; color: var(--primary); padding: 6px 15px; border-radius: 50px; font-size: 12px; font-weight: bold; margin-top: 10px; display: inline-block; }
+
+        /* صفحة تيمو */
+        #temu-page { display: none; padding-bottom: 90px; }
+        .search-area { padding: 15px 20px; background: var(--white); }
+        .search-box { background: #f1f1f1; border-radius: 15px; padding: 12px; display: flex; align-items: center; gap: 10px; }
+        .search-box input { border: none; outline: none; background: transparent; width: 100%; font-size: 14px; }
+        
+        /* التصنيفات (الخانات الـ 5) */
+        .categories-scroll { display: flex; gap: 10px; overflow-x: auto; padding: 15px 20px; scrollbar-width: none; }
+        .categories-scroll::-webkit-scrollbar { display: none; }
+        .cat-item { background: var(--white); padding: 10px 20px; border-radius: 12px; white-space: nowrap; font-size: 13px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.03); border: 1px solid #eee; }
+        .cat-item.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+        /* شبكة المنتجات */
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 15px; }
+        .p-card { background: var(--white); border-radius: 18px; overflow: hidden; border: 1px solid #eee; text-align: center; padding-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+        .p-img { width: 100%; height: 140px; background: #eee; object-fit: cover; }
+        .p-info { padding: 8px; }
+        .p-info h4 { font-size: 13px; margin: 5px 0; color: #555; height: 32px; overflow: hidden; }
+        .p-price { font-weight: 900; color: var(--text); display: block; margin-bottom: 8px; }
+        .p-btn { width: 85%; padding: 7px; border-radius: 8px; border: 1px solid #eee; background: #fafafa; font-size: 11px; color: #777; cursor: pointer; }
+
+        /* الشريط السفلي */
+        .nav-bottom { position: fixed; bottom: 0; width: 100%; height: 70px; background: var(--white); display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #eee; z-index: 1000; }
+        .nav-link { display: flex; flex-direction: column; align-items: center; color: #ccc; font-size: 11px; text-decoration: none; cursor: pointer; }
+        .nav-link.active { color: var(--primary); }
+        .nav-link i { font-size: 20px; margin-bottom: 4px; }
+    </style>
 </head>
 <body>
 
     <header class="app-bar">
-        <div class="menu-icon" onclick="alert('القائمة ستتوفر قريباً')">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="menu-icon" onclick="toggleNav()">
+            <span></span><span></span><span></span>
         </div>
-
         <div class="logo">Pickora<span>.</span></div>
-
-        <div class="icons">
-            <i class="fa-regular fa-bell"></i>
-        </div>
+        <div class="icons"><i class="fa-regular fa-bell"></i></div>
     </header>
 
-    <div class="welcome-msg">
-        <h2>أهلاً بك 👋</h2>
-        <p>اكتشف أفضل العروض المختارة لك اليوم</p>
-    </div>
-
-    <div class="app-content">
-        <a href="temu-beauty.html" class="main-card temu">
-            <div class="badge">الأكثر مبيعاً</div>
-            <div class="card-text">
-                <h3>عروض Temu</h3>
-                <p>منتجات تجميل وأدوات منزلية</p>
-                <span class="btn-text">تسوق الآن ←</span>
+    <section id="home-page">
+        <div class="welcome">
+            <h2>اكتشف عروضنا 👋</h2>
+            <p>اختر المنصة لبدء التسوق</p>
+        </div>
+        <div class="main-card temu-card" onclick="openTemu()">
+            <div class="card-content">
+                <h3>متجر تيمو (Temu)</h3>
+                <p>عروض الرياضة، المنزل، والإلكترونيات</p>
+                <span class="enter-btn">دخول المتجر</span>
             </div>
-        </a>
+        </div>
+        <div class="main-card shein-card" onclick="alert('قسم شي إن سيتوفر قريباً')">
+            <div class="card-content">
+                <h3>متجر شي إن (Shein)</h3>
+                <span class="enter-btn" style="background:#eee; color:#999">قريباً 🔒</span>
+            </div>
+        </div>
+        <div class="main-card amazon-card" onclick="alert('قسم أمازون سيتوفر قريباً')">
+            <div class="card-content">
+                <h3>متجر أمازون (Amazon)</h3>
+                <span class="enter-btn" style="background:#eee; color:#999">قريباً 🔒</span>
+            </div>
+        </div>
+    </section>
 
-        <div class="main-card shein disabled" onclick="alert('سيتوفر قريباً جداً')">
-            <div class="card-text">
-                <h3>عروض Shein</h3>
-                <p>أحدث صيحات الموضة</p>
-                <span class="status">قريباً 🔒</span>
+    <section id="temu-page">
+        <div class="search-area">
+            <div class="search-box">
+                <i class="fas fa-search" style="color:#aaa"></i>
+                <input type="text" placeholder="ماذا تبحث في تيمو اليوم؟">
             </div>
         </div>
 
-        <div class="main-card amazon disabled" onclick="alert('سيتوفر قريباً جداً')">
-            <div class="card-text">
-                <h3>عروض Amazon</h3>
-                <p>إلكترونيات وماركات عالمية</p>
-                <span class="status">قريباً 🔒</span>
-            </div>
+        <div class="categories-scroll">
+            <div class="cat-item active">الكل</div>
+            <div class="cat-item">الرياضة والملابس</div>
+            <div class="cat-item">الجيمنج (Gaming)</div>
+            <div class="cat-item">المعدات المنزلية</div>
+            <div class="cat-item">الالكترونيات والهواتف</div>
+            <div class="cat-item">كماليات السيارات</div>
         </div>
-    </div>
 
-    <nav class="bottom-tab">
-        <div class="tab-item active"><i class="fa-solid fa-house"></i><span>الرئيسية</span></div>
-        <div class="tab-item"><i class="fa-solid fa-magnifying-glass"></i><span>بحث</span></div>
-        <div class="tab-item"><i class="fa-solid fa-tags"></i><span>خصومات</span></div>
-        <div class="tab-item"><i class="fa-solid fa-user"></i><span>حسابي</span></div>
+        <div class="grid" id="product-grid">
+            </div>
+    </section>
+
+    <nav class="nav-bottom">
+        <div class="nav-link active" onclick="location.reload()"><i class="fa-solid fa-house"></i><span>الرئيسية</span></div>
+        <div class="nav-link"><i class="fa-solid fa-magnifying-glass"></i><span>بحث</span></div>
+        <div class="nav-link"><i class="fa-solid fa-user"></i><span>حسابي</span></div>
     </nav>
 
+    <script>
+        function openTemu() {
+            document.getElementById('home-page').style.display = 'none';
+            document.getElementById('temu-page').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+
+        // توليد الـ 50 مربع
+        const grid = document.getElementById('product-grid');
+        for (let i = 1; i <= 50; i++) {
+            grid.innerHTML += `
+                <div class="p-card">
+                    <img src="https://via.placeholder.com/150/f9f9f9/666?text=Pickora+${i}" class="p-img">
+                    <div class="p-info">
+                        <h4>منتج تيمو رقم ${i}</h4>
+                        <span class="p-price">35.00 ₪</span>
+                        <button class="p-btn">عرض التفاصيل</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function toggleNav() {
+            alert('القائمة الجانبية قيد التجهيز');
+        }
+    </script>
 </body>
 </html>
