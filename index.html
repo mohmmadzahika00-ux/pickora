@@ -3,52 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pickora | متجرك المختار</title>
+    <title>Pickora App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="logo-area">
-            <h1>Pickora<span>.</span></h1>
-            <p>أفضل الاختيارات من أشهر المنصات العالمية</p>
+    <div class="app-header">
+        <div class="user-welcome">
+            <span class="logo">Pickora<span>.</span></span>
+            <p>أهلاً بك في عالم العروض</p>
         </div>
-    </header>
+        <div class="app-icon">
+            <i class="fa-solid fa-bell"></i>
+        </div>
+    </div>
 
-    <main class="container">
-        <a href="temu-beauty.html" class="store-card temu">
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <div class="badge">الأكثر طلباً 🔥</div>
-                <h2>متجر تيمو (Temu)</h2>
-                <p>عروض تبدأ من 5 ₪ وشحن سريع</p>
-                <span class="shop-now">تسوق الآن <i class="fas fa-arrow-left"></i></span>
+    <div class="app-container">
+        
+        <a href="temu-beauty.html" class="app-card temu">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1472851294608-062f824d296e?q=80&w=500&auto=format&fit=crop');">
+                <span class="tag">موصى به</span>
+            </div>
+            <div class="card-detail">
+                <div class="info">
+                    <h3>عروض تيمو الحصرية</h3>
+                    <p>خصومات تصل إلى 90% على مستحضرات التجميل</p>
+                </div>
+                <div class="go-btn"><i class="fa-solid fa-chevron-left"></i></div>
             </div>
         </a>
 
-        <div class="store-card shein disabled" onclick="alert('قسم شي إن سيتوفر خلال أيام قليلة!')">
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <h2>عروض شي إن (Shein)</h2>
-                <p>أحدث صيحات الموضة العالمية</p>
-                <span class="status">قريباً.. 🔒</span>
+        <div class="app-card disabled" onclick="alert('سيتوفر قريباً جداً')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=500&auto=format&fit=crop');"></div>
+            <div class="card-detail">
+                <div class="info">
+                    <h3>أزياء شي إن</h3>
+                    <p>أحدث صيحات الموضة العالمية (قريباً)</p>
+                </div>
+                <div class="lock-icon"><i class="fa-solid fa-lock"></i></div>
             </div>
         </div>
 
-        <div class="store-card amazon disabled" onclick="alert('نعمل حالياً على تجهيز أفضل عروض أمازون لك!')">
-            <div class="card-overlay"></div>
-            <div class="card-content">
-                <h2>متجر أمازون (Amazon)</h2>
-                <p>ماركات أصلية وضمان جودة</p>
-                <span class="status">قريباً.. 🔒</span>
+        <div class="app-card disabled" onclick="alert('سيتوفر قريباً جداً')">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=500&auto=format&fit=crop');"></div>
+            <div class="card-detail">
+                <div class="info">
+                    <h3>متجر أمازون</h3>
+                    <p>كل ما تحتاجه من ماركات عالمية (قريباً)</p>
+                </div>
+                <div class="lock-icon"><i class="fa-solid fa-lock"></i></div>
             </div>
         </div>
-    </main>
 
-    <footer class="footer">
-        <p>&copy; 2026 Pickora Store - جميع الحقوق محفوظة</p>
-    </footer>
+    </div>
+
+    <div class="bottom-nav">
+        <div class="nav-item active"><i class="fa-solid fa-house"></i><span>الرئيسية</span></div>
+        <div class="nav-item"><i class="fa-solid fa-heart"></i><span>المفضلة</span></div>
+        <div class="nav-item"><i class="fa-solid fa-user"></i><span>حسابي</span></div>
+    </div>
 
 </body>
 </html>
