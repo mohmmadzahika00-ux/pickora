@@ -3,66 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pickora App</title>
+    <title>Pickora Store</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="app-header">
-        <div class="user-welcome">
-            <span class="logo">Pickora<span>.</span></span>
-            <p>أهلاً بك في عالم العروض</p>
+    <header class="app-bar">
+        <div class="logo">Pickora<span>.</span></div>
+        <div class="icons">
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-bag-shopping"></i>
         </div>
-        <div class="app-icon">
-            <i class="fa-solid fa-bell"></i>
-        </div>
+    </header>
+
+    <div class="welcome-msg">
+        <h2>أهلاً بك 👋</h2>
+        <p>اكتشف أفضل العروض المختارة لك اليوم</p>
     </div>
 
-    <div class="app-container">
-        
-        <a href="temu-beauty.html" class="app-card temu">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1472851294608-062f824d296e?q=80&w=500&auto=format&fit=crop');">
-                <span class="tag">موصى به</span>
-            </div>
-            <div class="card-detail">
-                <div class="info">
-                    <h3>عروض تيمو الحصرية</h3>
-                    <p>خصومات تصل إلى 90% على مستحضرات التجميل</p>
-                </div>
-                <div class="go-btn"><i class="fa-solid fa-chevron-left"></i></div>
+    <div class="app-content">
+        <a href="temu-beauty.html" class="main-card temu">
+            <div class="badge">الأكثر مبيعاً</div>
+            <div class="card-text">
+                <h3>عروض Temu</h3>
+                <p>منتجات تجميل وأدوات منزلية</p>
+                <span class="btn-text">تسوق الآن ←</span>
             </div>
         </a>
 
-        <div class="app-card disabled" onclick="alert('سيتوفر قريباً جداً')">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=500&auto=format&fit=crop');"></div>
-            <div class="card-detail">
-                <div class="info">
-                    <h3>أزياء شي إن</h3>
-                    <p>أحدث صيحات الموضة العالمية (قريباً)</p>
-                </div>
-                <div class="lock-icon"><i class="fa-solid fa-lock"></i></div>
+        <div class="main-card shein disabled" onclick="alert('سيتوفر قريباً جداً')">
+            <div class="card-text">
+                <h3>عروض Shein</h3>
+                <p>أحدث صيحات الموضة</p>
+                <span class="status">قريباً 🔒</span>
             </div>
         </div>
 
-        <div class="app-card disabled" onclick="alert('سيتوفر قريباً جداً')">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=500&auto=format&fit=crop');"></div>
-            <div class="card-detail">
-                <div class="info">
-                    <h3>متجر أمازون</h3>
-                    <p>كل ما تحتاجه من ماركات عالمية (قريباً)</p>
-                </div>
-                <div class="lock-icon"><i class="fa-solid fa-lock"></i></div>
+        <div class="main-card amazon disabled" onclick="alert('سيتوفر قريباً جداً')">
+            <div class="card-text">
+                <h3>عروض Amazon</h3>
+                <p>إلكترونيات وماركات عالمية</p>
+                <span class="status">قريباً 🔒</span>
             </div>
         </div>
-
     </div>
 
-    <div class="bottom-nav">
-        <div class="nav-item active"><i class="fa-solid fa-house"></i><span>الرئيسية</span></div>
-        <div class="nav-item"><i class="fa-solid fa-heart"></i><span>المفضلة</span></div>
-        <div class="nav-item"><i class="fa-solid fa-user"></i><span>حسابي</span></div>
-    </div>
+    <nav class="bottom-tab">
+        <div class="tab-item active"><i class="fa-solid fa-house"></i><span>الرئيسية</span></div>
+        <div class="tab-item"><i class="fa-solid fa-magnifying-glass"></i><span>بحث</span></div>
+        <div class="tab-item"><i class="fa-solid fa-tags"></i><span>خصومات</span></div>
+        <div class="tab-item"><i class="fa-solid fa-user"></i><span>حسابي</span></div>
+    </nav>
 
 </body>
 </html>
